@@ -2,7 +2,7 @@
 @import '../utils/function';
 
 $img: '../images/business';
-$sections: soil, ocean, adminstra, survey, digital;
+$sections: soil, ocean, adminstra, survey, digital, rnd;
 @each $section in $sections {
     .#{$section} {
         .intro--banner_bg {

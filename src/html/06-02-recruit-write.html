@@ -18,6 +18,9 @@
         @@include('./include/headerBanner.html')
         <!-- s: contents -->
         <div data-current="recruit" data-layout="sub" id="contents" class="recruit">
+            @@include('./include/intro.html',{
+                "sub_title_desc" : "none"
+            })
             <div class="recruit__wrap">
 				<div class="board recruit--view container">
 					<div class="recruit--view__top">

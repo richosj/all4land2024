@@ -505,9 +505,18 @@
             width: 10.5rem;
             height: 6rem;
             border-radius: 0.5rem;
-            background-color: #0a529d;
-            color: #fff;
             font-size: 1.9rem;
+            transition: all .25s ease-in;
+            background-color: #0a529d;
+                color: #fff;
+                border: 1px solid #555555;
+                color: #555555;
+                background-color: #fff;
+            &:hover,
+            &:focus{
+                background-color: #0a529d;
+                color: #fff;
+            }
             @include responsive(xl){
                 height: 5rem;
                 font-size: 1.7rem;
@@ -607,4 +616,13 @@
             }
         }
     }
+}
+
+.recruit{
+    &:not(:has(#fn)){
+        .intro--banner{
+            display: none;
+        }
+    }
+    
 }

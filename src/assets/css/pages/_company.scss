@@ -207,6 +207,8 @@ $sections: ceo, history, vision, client, ci, map;
     }
 }
 
+
+// 찾아오시는길
 .map{
     iframe{
         margin-bottom: 9.0rem;
@@ -253,6 +255,7 @@ $sections: ceo, history, vision, client, ci, map;
     }
 }
 
+// 고객사
 .client{
     padding-bottom: 0;
     .intro--banner{
@@ -275,5 +278,61 @@ $sections: ceo, history, vision, client, ci, map;
         grid-template-columns: repeat(6,1fr);
         padding-bottom: 6rem;
         padding-bottom: 6.0rem;
+    }
+}
+
+// 비전
+.vision{
+    padding-bottom: 0;
+    .intro--banner{
+        margin-bottom: 0;
+    }
+    &__wrap{
+        background: #f4f4f6;
+        padding-top: 9.5rem;
+        padding-bottom: 14rem;
+    }
+    .vision__item--wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8rem;
+        background: #fff;   
+        border-radius:2.0rem;
+        height: 44.5rem;
+        &>div{
+            width: 50%;
+            &.banners{
+                height: 100%;
+                width:calc(50% - 10px);
+                img{
+                    height: 100%;
+                }
+            }
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }
+    
+    }
+    &__item{
+        &--info{
+            margin-left: 7.1rem;
+            .eng{
+                color:#0a529d;
+                font-size: 2.5rem;
+                margin-bottom: 2.0rem;
+            }
+            .kor{
+                color:#1d1d1d;
+                font-size: 4.0rem;
+                margin-bottom: 3.5rem;
+            }
+            .txt{
+                color:#717171;
+                font-size: 1.7rem;
+                line-height: 1.5;
+            }
+        }
     }
 }

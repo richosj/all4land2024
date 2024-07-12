@@ -400,6 +400,7 @@ $img: '../images/recruit';
 }
 
 .personnel{
+	padding-bottom: 0;
 	.intro--banner_bg{
 		background-image: url('#{$img}/bg-recruit02.png');
 	}

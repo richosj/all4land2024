@@ -3,7 +3,7 @@
 
 $img: '../images/company';
 
-$sections: ceo, history;
+$sections: ceo, history, vision, client, ci, map;
 @each $section in $sections {
     .#{$section} {
         .intro--banner_bg {
@@ -204,5 +204,76 @@ $sections: ceo, history;
                 }
             }
         }
+    }
+}
+
+.map{
+    iframe{
+        margin-bottom: 9.0rem;
+        height: 50rem;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+.map-info{
+    display: flex;
+    margin-bottom: 6.0rem;
+    dt{
+        font-size: 4.0rem;
+        color:#1d1d1d;
+        strong{
+            margin-left: 10px;
+            display: inline-block;
+            font-weight: bold;
+        }
+    }
+    dd{
+        padding-left: 8.5rem;
+    }
+    &__address{
+        font-size: 2.4rem;
+        margin-bottom: 3.0rem;
+        color:#1d1d1d;
+    }
+    &__tel{
+        display: flex;
+        color:#1d1d1d;
+        div{
+            font-size: 2.4rem;
+            &+div{
+                margin-left: 6.0rem;
+            }
+            strong{
+                display: inline-block;
+                margin-right: 1.4rem;
+                font-weight: bold;
+            }
+        }    
+    }
+}
+
+.client{
+    padding-bottom: 0;
+    .intro--banner{
+        margin-bottom: 0;
+    }
+    &__wrap{
+        background: #f4f4f6;
+        padding-top: 9.5rem;
+        padding-bottom: 14rem;
+    }
+    &__ti{
+        text-align: center;
+        font-size: 3.2rem;
+        color:#1d1d1d;
+        margin-bottom: 4.0rem;
+    }
+    &__li{
+        display: grid;
+        gap: 1.6rem 3rem;
+        grid-template-columns: repeat(6,1fr);
+        padding-bottom: 6rem;
+        padding-bottom: 6.0rem;
     }
 }

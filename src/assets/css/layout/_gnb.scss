@@ -223,7 +223,7 @@ body{
             transition-duration: 0.25s;
             transition-delay:0s;
             opacity: 1;
-            visibility: visible;
+            z-index: 999;
         }
     }
 }
@@ -236,10 +236,10 @@ body{
     left: 0;
     right: 0;
     top: 0;
-    height: 100vh;
+    height: 100vh;    
     bottom: 0;
     background: rgba(0, 0, 0, 0.4);
-    z-index: 999;
+    z-index: -1;
 }
 
 // 숨김 처리

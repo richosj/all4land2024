@@ -1,5 +1,14 @@
+@import '../utils/var';
+@import '../utils/function';
 
 $img: '../images/esg';
+
+.md-show{
+    display: none;
+}
+@include responsive(md){
+    .md-show{display: block;}    
+}
 
 .esg{
     .intro--banner_bg{background-image: url('#{$img}/bg-esg.png');}
@@ -18,27 +27,79 @@ $img: '../images/esg';
             color: #fff;
             font-size: 4rem;
         }
+        @include responsive(xl){
+            border-radius: 0rem;
+            p{
+                font-size: clamp(2rem, 2.08vw, 4rem);
+            }
+        }
+        @include responsive(lg){
+            padding: 5rem 0;
+        }
+        @include responsive(md){
+            padding: 4rem 0;
+            p{
+                font-size: clamp(1.2rem, 2.08vw, 2rem);
+            }
+        }
     }
 
     &__important{
         padding: 16rem 0;
+        @include responsive(lg){
+            padding: 12rem 0;
+        }
+        @include responsive(md){
+            padding: 8rem 0;
+        }
         &--group{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            
             &:nth-child(2){
                 flex-direction: row-reverse;
                 margin: 14rem 0;
+            }
+            @include responsive(lg){
+                flex-wrap: wrap;
+                &:nth-child(2){
+                    margin: 10rem 0;
+                }
+            }
+            @include responsive(md){
+                &:nth-child(2){
+                    margin: 7rem 0;
+                }
             }
         }
         .desc{
             width: 32%;
             padding-left: 8rem;
+            @include responsive(lg){
+                width: calc(100%);
+                padding-left: 4rem;
+                display: flex;
+                align-items: center;
+            }
+            @include responsive(md){
+                padding-left: 2rem;
+                
+            }
+            @include responsive(sm){
+                padding-left: 1rem;
+                justify-content: space-between;
+            }
             .txt{
                 color: #666666;
                 line-height: 1.6;
                 font-size: 2.1rem;
+                @include responsive(lg){
+                    padding: 0 0 0 2rem;
+                    font-size: clamp(1.4rem,2.09vw,1.9rem);
+                }
+                @include responsive(sm){
+                    padding: 0;
+                }
             }
         }
         .hgroup{
@@ -54,6 +115,11 @@ $img: '../images/esg';
                 line-height: 0.75;
                 font-size: 24rem;
                 z-index: 1;
+                @include responsive(lg){
+                    font-size: clamp(15rem,24vw,20rem);
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
             }
             p{
                 position: relative;
@@ -64,6 +130,9 @@ $img: '../images/esg';
                 color: #127ab7;
                 font-weight: 900;
                 font-size: 5rem;
+                @include responsive(lg){
+                    font-size: clamp(2rem,5vw,5rem);
+                }
             }
             .eng{
                 font-weight: 900;
@@ -71,17 +140,27 @@ $img: '../images/esg';
                 font-size: 1.9rem;
                 padding: 1.5rem 0 0.3rem 0;
                 text-transform: uppercase;
+                @include responsive(lg){
+                    font-size: clamp(1.2rem, 2vw, 1.9rem);
+                }
             }
             .kr{
                 color: #000000;
                 font-weight: 700;
                 font-size: 1.9rem;
                 margin-top: .5rem;
+                @include responsive(md){
+                    font-size: clamp(1.2rem, 2vw, 1.9rem);
+                }
             }
         }
 
         .banners{
             width: calc(100% - 32%);
+            @include responsive(lg){
+                width: calc(100%);
+                margin-top: 1.5rem;
+            }
         }
     }
 
@@ -101,6 +180,17 @@ $img: '../images/esg';
                 font-size: 2.5rem;
             }
         }
+        @include responsive(md){
+            padding: 5rem 0;
+            &--text{
+                span{
+                    font-size: 1.4rem;
+                }
+                strong{
+                    font-size: 1.8rem;
+                }
+            }
+        }
     }
 }
 
@@ -114,18 +204,25 @@ $img: '../images/esg';
         height: 100%;
         display: flex;
         justify-content: space-between;
+        @include responsive(md){
+            display: block;
+        }
     }
     .text__pin{
         position: sticky;
         top: 0;
         height: 100vh;
         padding-top: 23rem;
+        @include responsive(md){
+            padding-top: 12rem;
+            padding-bottom: 12rem;
+            height: auto;
+        }
         &--title{
             color: #fff;
             line-height: 1;
             font-weight: 700;
             font-size: 4.8rem;
-            
         }
         &--shabby{
             color: #fff;
@@ -145,7 +242,19 @@ $img: '../images/esg';
                     &:nth-child(2){font-size: 2.5rem;margin-top: 1rem;}
                 }
             }
-
+        }
+        @include responsive(md){
+            &--title{
+                font-size: 2.4rem;
+            }
+            &--shabby{
+                font-size: 1.4rem;
+                margin: 2.5rem 0;
+            }
+            &--sign{
+                margin-top: 2rem;
+                font-size: 1em;
+            }
         }
     }
 }
@@ -153,8 +262,10 @@ $img: '../images/esg';
 .cards__wrap{
     position: relative;
     padding-top: 18rem;
+    @include responsive(md){
+        padding-top: 5rem;
+    }
 }
-
 .cards__figure{
     position: absolute;
     overflow: hidden;
@@ -176,6 +287,23 @@ $img: '../images/esg';
         color: #666;
         font-size: 1.9rem;
         margin-top: 2rem;
+    }
+    @include responsive(md){
+        position: relative;
+        margin: 0 auto;
+        right: inherit !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 80%;
+        max-width: 32rem;
+        padding: 2rem;
+        &--title{
+            font-size: 1.5rem;
+        }
+        &--desc{
+            font-size: 1.4rem;
+            margin-top: 1rem;
+        }
     }
 }
 
@@ -298,6 +426,26 @@ $img: '../images/esg';
                 color: #007ab4;
             }
         }
+        @include responsive(lg){
+            padding-bottom: 4rem;
+            h3{
+                font-size: 3rem;
+            }
+            p{
+                margin-top: 2rem;
+                font-size: 1.8rem;
+            }
+        }
+        @include responsive(md){
+            padding-bottom: 3rem;
+            h3{
+                font-size: 2rem;
+            }
+            p{
+                margin-top: 1rem;
+                font-size: 1.4rem;
+            }
+        }
     }
     &__row{
         padding: 7.55rem 0;
@@ -306,12 +454,24 @@ $img: '../images/esg';
             &.flex{
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-                gap: 0 19rem;
+                gap: 0 13%;
+                @include responsive(lg){
+                    grid-template-columns: repeat(1, 1fr);
+                    gap:0;
+                }
             }
+            .community__frm--col{
+                &:nth-child(2){margin-top: 4rem;padding-top: 4rem;border-top: 1px solid #c6c6c6;}
+            }
+        }
+        @include responsive(lg){
+            padding: 5rem 0;
+        }
+        @include responsive(md){
+            padding: 4rem 0;
         }
     }
     &__frm{
-
         &--title{
             padding-bottom: 3.5rem;
             span{
@@ -337,10 +497,33 @@ $img: '../images/esg';
                 line-height: 1.6;
                 margin-top: 3.5rem;
             }
+            @include responsive(lg){
+                padding-bottom: 2rem;
+                span{
+                    font-size: 2rem;
+                }
+                p{
+                    font-size: 1.3rem;
+                    margin-top: 1.5rem;
+                }
+            }
         }
         &--type{
             display: flex;
+            //grid-template-columns: repeat(2, 1fr);
             gap: 0 4rem;
+            @include responsive(xl){
+                gap: 0 2.5vw;
+            }
+            @include responsive(md){
+                display: grid;
+                gap: 1rem;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @include responsive(sm){
+                gap: 1rem;
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
         &--label{
             margin-bottom: 1rem;
@@ -358,12 +541,22 @@ $img: '../images/esg';
                         margin-left: 0.3rem;
                     }
                 }
+                @include responsive(lg){
+                    font-size: 1.5rem;
+                }
+                @include responsive(md){
+                    //font-size: 1.3rem;
+                }
             }
         }
         &--desc{
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
             color: #717171;
+        }
+        &--input{
+            display: flex;
+            gap: 0 2rem;
         }
         &--group{
             +.community__frm--group{
@@ -390,6 +583,10 @@ $img: '../images/esg';
             &:nth-child(2){
                 background-color: #0a529d;
             }
+            @include responsive(lg){
+                height: 4rem;
+                font-size: 1.4rem;
+            }
         }
     }
 }
@@ -397,7 +594,6 @@ $img: '../images/esg';
 /*
     별도
 */
-.fn_files{}
 #drop-area{
     border: 1px dashed #8e8e8e;
     background-color: #f0f0f0;
@@ -405,6 +601,9 @@ $img: '../images/esg';
     border-radius: 1.5rem;
     display: flex;
     justify-content: center;
+    @include responsive(lg){
+        padding: 4rem 0;
+    }
     .wrap{
         text-align: center;
         p{
@@ -422,11 +621,29 @@ $img: '../images/esg';
              font-size: 1.9rem;
              height: 6rem;
              padding: 0 3.5rem;
+             cursor: pointer;
              i{
                 display: inline-block;
                 width: 13px;height: 14px;
                 @include set-background('../images/esg/icon-filedrop.png');
              }
+        }
+        @include responsive(lg){
+            p{
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .button{
+                font-size: 1.5rem;
+                height: 5rem;
+                padding: 0 2.5rem;
+            }
+        }
+        @include responsive(md){
+            .button{
+                height: 4.5rem;
+                font-size: 1.4rem;
+            }
         }
     }
 }
@@ -457,7 +674,18 @@ $img: '../images/esg';
         display: flex;
         align-items: center;
         gap: 0 .9rem;
-
+    }
+    @include responsive(lg){
+        &__item{
+            padding: 1.2rem 1.5rem;
+        }
+        &__info{
+            font-size: 1.4rem;
+        }
+        &__del{
+            font-size: 1.4rem;
+            gap: 0 .5rem
+        }
     }
 }
 .fn_files_total{
@@ -478,6 +706,18 @@ $img: '../images/esg';
         align-items: center;
         gap: 0 .9rem;
     }
+    @include responsive(lg){
+        span{
+            font-size: 1.5rem;
+        }
+        .count{
+            font-size: 1.4rem;
+        }
+        .btn_files_del{
+            font-size: 1.4rem;
+            gap: 0 .5rem;
+        }
+    }
 }
 
 .areement{
@@ -490,20 +730,33 @@ $img: '../images/esg';
             color: #555555;
             font-size: 1.9rem;
             padding-bottom: 2.5rem;
+            @include responsive(lg){
+                font-size: 1.4rem;
+            }
         }
         ol{
             li{
                 strong{
                     color: #2d2d2d;
                     font-size: 1.7rem;
+                    @include responsive(lg){
+                        font-size: 1.3rem;
+                    }
                 }
                 p{
                     color: #555555;
                     font-size: 1.7rem;
                     margin-top: 1.5rem;
+                    @include responsive(lg){
+                        font-size: 1.3rem;
+                        margin-top: 1rem;
+                    }
                 }
                 +li{
                     margin-top: 1.5rem;
+                    @include responsive(lg){
+                        margin-top: 1rem;
+                    }
                 }
             }
         }
@@ -515,8 +768,9 @@ $img: '../images/esg';
         justify-content: center;
         padding: 3rem 0;
         margin-top: 2.5rem;
-        label{
-            
+        @include responsive(lg){
+            padding: 2rem 0;
+            margin-top: 2rem;
         }
     }
 }

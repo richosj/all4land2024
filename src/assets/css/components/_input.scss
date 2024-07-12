@@ -1,9 +1,14 @@
+@import '../utils/var';
+@import '../utils/function';
 
 .form-radio{
     display: inline-flex;
     align-items: center;
     position: relative;
     gap: 0 1rem;
+    @include responsive(lg){
+        gap: 0 0.7rem;
+    }
     input{
         position: absolute;
         width: 1px;
@@ -20,6 +25,10 @@
         background: #fff;
         overflow: hidden;
         transition: all 0.25s;
+        @include responsive(lg){
+            width: 1.6rem;
+            height: 1.6rem;
+        }
         &::after{
             content:"";
             width: 0;
@@ -37,6 +46,12 @@
     span{
         color: #555555;
         font-size: 1.9rem;
+        @include responsive(xl){
+            font-size: clamp(1.3rem, 1.7vw, 1.9rem);
+        }
+        @include responsive(lg){
+            font-size: clamp(1.4rem, 1.7vw, 1.7rem);
+        }
     }
     input:checked + i{
         background-color: #0a529d;
@@ -44,6 +59,10 @@
         &::after{
             width: .8rem;
             height: .8rem;
+            @include responsive(lg){
+                width: .5rem;
+                height: .5rem;
+            }
         }
     }
     input[type="checkbox"]{
@@ -59,6 +78,12 @@
     span span{
         color: #007ab4;
         font-size: 1.9rem;
+        @include responsive(lg){
+            font-size: 1.4rem;
+        }
+        @include responsive(md){
+            font-size: 1.2rem;
+        }
     }
 }
 
@@ -69,6 +94,14 @@
     padding: 0 2rem;
     height: 6rem;
     width: 100%;
+    @include responsive(lg){
+        height: 4rem;
+    }
+    @include responsive(md){
+        font-size: 1.3rem;
+        padding: 0 1rem;
+        border-radius: .5rem;
+    }
 }
 
 .form-textarea{
@@ -78,4 +111,10 @@
     padding: 2rem;
     overflow-y: auto;
     width: 100%;
+    @include responsive(xl){
+        padding: 1.5rem;
+    }
+    @include responsive(lg){
+        font-size: 1.4rem;
+    }
 }

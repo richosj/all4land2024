@@ -13,7 +13,26 @@ $sections: ceo, history, vision, client, ci, map;
 }
 
 .ceo{
+    &__mobile--img{
+        display: none;
+        text-align: center;
+        .container{
+            background-color: #f8f8f8;
+            margin-bottom: 2.5rem;
+            padding: 3rem 8rem 0;
+            border: 1px solid #eee;
+            border-right: 0;
+            border-left: 0;
+            img{
+                vertical-align: top;
+            }
+        }
+        @include responsive(lg){
+            display: block;
+        }
+    }
     &__narrative{
+        
         &--text1{
             color: #1d1d1d;
             font-weight: 700;
@@ -29,13 +48,29 @@ $sections: ceo, history, vision, client, ci, map;
             font-size: 1.7rem;
             margin-top: 3.5rem;
         }
+        @include responsive(xl){
+            width: 65vw;
+        }
+        @include responsive(lg){
+            text-align: center;
+            width: 100%;
+            &--text1{
+                font-size:  clamp(17px, calc(17px + (8 * ((100vw - 1000px) / 400))), 25px);
+            }
+            &--text2{
+                font-size:  clamp(13px, calc(13px + (4 * ((100vw - 1000px) / 400))), 17px);
+            }
+        }
     }
     &__goals{
         margin-top: 3.5rem;
         background-color: #f0f0f0;
+        
         .container{
             position: relative;
-            padding: 3.5rem 0;
+            //padding: 3.5rem 0;
+            padding-top: 3.5rem;
+            padding-bottom: 3.5rem;
         }
         &--text1{
             color: #1d1d1d;
@@ -44,6 +79,15 @@ $sections: ceo, history, vision, client, ci, map;
             font-size: 2.5rem;
             b{
                 color: #0a529d;
+            }
+            @include responsive(xl){
+                width: 65vw;
+                font-size: clamp(1.8rem, 1.8vw, 2.5rem);
+            }
+            @include responsive(lg){
+                width: 100%;
+                font-size: clamp(14px, calc(14px + (6 * ((100vw - 768px) / 232))), 20px);
+                text-align: center;
             }
         }
         &--text2{
@@ -51,9 +95,23 @@ $sections: ceo, history, vision, client, ci, map;
             line-height: 1;
             font-size: 1.7rem;
             margin-top: 3.5rem;
+            line-height: 1.5;
             p{
                 +p{
                     margin-top: 3.5rem;
+                }
+            }
+            @include responsive(xl){
+                width: 65vw;
+                p{
+                    font-size: clamp(1.4rem, 1.7vw, 1.7rem);
+                }
+            }
+            @include responsive(md){
+                width: 100%;
+                text-align: center;
+                p{
+                    font-size: 1.3rem;
                 }
             }
         }
@@ -65,11 +123,23 @@ $sections: ceo, history, vision, client, ci, map;
             b{
                 color: #0a529d;
             }
+            @include responsive(md){
+                margin-top: 6rem;
+            }
+            @include responsive(md){
+                margin-top: 5rem;
+                text-align: center;
+            }
         }
         &--titleImg{
             position: absolute;
             bottom: 0;
             right: 0;
+            width: 33.2%;
+            @include responsive(lg){
+                opacity: 0;
+                visibility: hidden;
+            }
         }
     }
 }
@@ -103,6 +173,13 @@ $sections: ceo, history, vision, client, ci, map;
                 font-weight: 700;
             }
         }
+        @include responsive(lg){
+            margin-bottom: 5rem;
+            button{
+                font-size: 1.4rem;
+                height: 5rem;
+            }
+        }
     }
     &__content{
         margin: 0 auto;
@@ -123,8 +200,10 @@ $sections: ceo, history, vision, client, ci, map;
             &-indicator{
                 position: relative;
                 width: 100%;
-                height: 100%;
+                height: 0%;
                 background-color: #0a529d;
+                transition: height 0.15s;
+                will-change: auto;
             }
             &-step{
                 position: absolute;
@@ -135,21 +214,47 @@ $sections: ceo, history, vision, client, ci, map;
                 height: 7.3rem;
                 @include set-background("#{$img}/history-head.png");
             }
+            @include responsive(lg){
+                &-bar{
+                    left: 1.7rem;
+                    transform: translateX(0%);
+                    width: .2rem;
+                }
+                &-step{
+                    background-size: cover;
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
         }
         &--rows{
             display: flex;
             flex-wrap: wrap;
-            gap : 0 16.4rem;
-            &:not(.last-child){
+            gap : 0 11%;
+            @include responsive(lg){
+                gap: 0;
+                flex-direction: column;
+                padding-left: 2rem;
+            }
+            &:not(:last-child){
                 margin-bottom: 12rem;
             }
             > div {
-                width: calc(50% - 8.2rem);
+                width: calc(50% - 5.5%);
+                @include responsive(lg){
+                    width: 100%;
+                }
             }
             &._revers{
                 flex-direction: row-reverse;
+                @include responsive(lg){
+                    flex-direction: row;
+                }
                 ol > li{
                     flex-direction: row-reverse;
+                    @include responsive(lg){
+                        flex-direction: row;
+                    }
                     ul{
                         li{
                             text-align: right;
@@ -158,6 +263,15 @@ $sections: ceo, history, vision, client, ci, map;
                             &::before{
                                 left: inherit;
                                 right: 0;
+                            }
+                            @include responsive(lg){
+                                text-align: left;
+                                padding-right: .9rem;
+                                padding-left: .9rem;
+                                &::before{
+                                    left: 0;
+                                    right: inherit;
+                                }
                             }
                         }
                     }
@@ -174,6 +288,20 @@ $sections: ceo, history, vision, client, ci, map;
             text-align: right;
             h2{font-size: 4.8rem;}
             p{font-size: 2.1rem;}
+            @include responsive(lg){
+                height: 20rem;
+                padding: 2rem;
+                margin-bottom: 2rem;
+                h2{
+                    font-size: clamp(2.4rem, 4.8vw, 4.8rem);
+                }
+                p{
+                    font-size: clamp(1.4rem, 1.4vw, 2.1rem);
+                }
+            }
+            @include responsive(md){
+                height: 15rem;
+            }
         }
         &--list{
             ol{
@@ -194,6 +322,7 @@ $sections: ceo, history, vision, client, ci, map;
                             color: #1d1d1d;
                             font-size: 1.7rem;
                             padding-left: .9rem;
+                            line-height: 1.45;
                             &::before{
                                 top: .7rem;
                                 width: .2rem;
@@ -201,7 +330,23 @@ $sections: ceo, history, vision, client, ci, map;
                             }
                         }
                     }
+                    @include responsive(lg){
+                        gap: 0 2.5rem;
+                        > strong{
+                            font-size: 2rem;
+                        }
+                        +li{
+                            margin-top: 3rem;
+                        }
+                        ul{
+                            li{
+                                font-size: 1.2rem;
+
+                            }
+                        }
+                    }
                 }
+                
             }
         }
     }

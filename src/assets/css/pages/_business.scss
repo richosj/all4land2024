@@ -99,9 +99,15 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
             }
             @include responsive(lg){
                 font-size: 3rem;
+                small{
+                    font-size: 2.2rem;
+                }
             }
             @include responsive(md){
                 font-size: 2rem;
+                small{
+                    font-size: 1.7rem;
+                }
             }
         }
         &--desc{
@@ -186,11 +192,22 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
         }
         &.column-3{
             grid-template-columns: repeat(3, 1fr); 
+            @include responsive(md){
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
         &.column-3-d{
             grid-template-columns: 27rem repeat(2, 1fr);
             gap: 0 2rem;
             padding: 9.5rem 7.8rem;
+            @include responsive(lg){
+                padding: 4rem;
+            }
+            @include responsive(md){
+                padding: 2.5rem;
+                gap: 2rem 0;
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
         .figure{
             position: relative;
@@ -247,6 +264,10 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
                 &.row-col-2{
                     grid-template-columns: repeat(2,1fr);
                     position: relative;
+                    @include responsive(md){
+                        grid-template-columns: repeat(1,1fr);
+                        gap: 1rem;
+                    }
                     .caption{
                         width: 82%;
                     }
@@ -257,6 +278,9 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
                         position: absolute;
                         background-color: #e7e7e7;
                         z-index: 1;
+                        @include responsive(md){
+                            display: none;
+                        }
                     }
                     &::after{
                         left: 0;
@@ -270,7 +294,6 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
                         width: 1px;
                         height: 100%;
                     }
-
                 }
             }
             img{

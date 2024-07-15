@@ -623,17 +623,44 @@ $sections: ceo, history, vision, client, ci, map;
 		.ci__item{
 			display: flex;
 			margin-bottom: 4rem;
+            @include responsive(lg){
+                display: block;
+                margin-bottom: 2rem;
+            }
+            @include responsive(md){
+            
+            }
 			dt{
 				width:30rem;
 				font-size: 4rem;
 				font-weight: bold;
+                @include responsive(lg){
+                    width:100%;
+                    font-size: 3rem;
+                    margin-bottom: 1rem;
+                }
+                @include responsive(md){
+                    font-size: 2rem;
+                }
 			}
 			dd{
 				width: calc(100% - 30rem);
+                @include responsive(lg){
+                    width:100%;
+                }
 			}
 			&--info{
 				p{
+                    font-size: 1.7rem;
 					margin-bottom: 3.5rem;
+                    @include responsive(lg){
+                        display: block;
+                        margin-bottom: 1.5rem;
+                        font-size: 1.5rem;
+                    }
+                    @include responsive(md){
+                        font-size: 1.3rem;
+                    }
 					&:last-child{
 						margin-bottom: 0;
 					}
@@ -647,17 +674,51 @@ $sections: ceo, history, vision, client, ci, map;
 			&--colors{
 				display: flex;
 				gap:2.4rem;
+                @include responsive(lg){
+                    display: block;
+                }
 				&>dl{
 					width: 50%;
 					border-radius:1.6rem;
 					padding:4rem;
 					color:#fff;
+                    &:first-child{
+                        @include responsive(lg){
+                            margin-bottom: 2rem;
+                        }
+                    }
+                    @include responsive(lg){
+                        width: 100%;
+                        padding:3rem;
+                    }
+                    @include responsive(md){
+                        padding:2rem;
+                    }
 					dt{
+                        font-size: 2.4rem;
 						margin-bottom: 6rem;
+                        @include responsive(lg){
+                            font-size: 1.8rem;
+                            margin-bottom: 4.5rem;
+                        }
+                        @include responsive(md){
+                            font-size: 1.2rem;
+                            margin-bottom: 3rem;
+                        }
 					}
 					dd{
 						display: flex;
 						gap:2.6rem;
+                        
+                        div{
+                            font-size: 1.7rem;
+                            @include responsive(lg){
+                                font-size: 1.4rem;
+                            }
+                            @include responsive(md){
+                                font-size: 1.1rem;
+                            }
+                        }
 					}
 				}
 				&--blue{
@@ -682,6 +743,19 @@ $sections: ceo, history, vision, client, ci, map;
 				padding-left: 6rem;
 				text-align: left;
 				width: 20rem;
+                @include responsive(lg){
+                    font-size: 1.4rem;
+                    width: 18rem;
+                }
+                @include responsive(md){
+                    font-size: 1.1rem;
+                    width: 100%;
+                    background-position: 95% center;
+                    padding-left: 0;
+                    text-align: center;
+                    height: 4rem;
+                    line-height: 4rem;
+                }
 			}
 		}
 		.box{
@@ -695,8 +769,27 @@ $sections: ceo, history, vision, client, ci, map;
 			align-content: center;
 			justify-content: center;
 			align-items: center;
+            @include responsive(lg){
+                margin-bottom: 7.5rem;
+                img{
+                    max-width: 50%;
+                }
+            }
+            @include responsive(md){
+                margin-bottom: 5rem;
+                height: 18rem;
+                img{
+                    max-width: 25%;
+                }
+            }
 			&.signature{
 				gap:15rem;
+                @include responsive(lg){
+                    gap: 11rem;
+                }
+                @include responsive(md){
+                    gap:7.5rem;
+                }
 			}
 			&.symbol{
 			}
@@ -705,12 +798,27 @@ $sections: ceo, history, vision, client, ci, map;
 	.txt01{
 		font-size: 1.7rem;
 		color:#1d1d1d;
+        @include responsive(lg){
+            font-size: 1.5rem;
+        }
+        @include responsive(md){
+            font-size: 1.3rem;
+        }
 		&.mb25{
 			margin-bottom: 2.5rem;
+            @include responsive(lg){
+                margin-bottom: 1.5rem;
+            }
 		}
 	}
 	.txt02{
 		font-size: 1.5rem;
 		color:#999999;
+        @include responsive(lg){
+            font-size: 1.3rem;
+        }
+        @include responsive(md){
+            font-size: 1.1rem;
+        }
 	}
 }

@@ -13,7 +13,26 @@ $sections: ceo, history, vision, client, ci, map;
 }
 
 .ceo{
+    &__mobile--img{
+        display: none;
+        text-align: center;
+        .container{
+            background-color: #f8f8f8;
+            margin-bottom: 2.5rem;
+            padding: 3rem 8rem 0;
+            border: 1px solid #eee;
+            border-right: 0;
+            border-left: 0;
+            img{
+                vertical-align: top;
+            }
+        }
+        @include responsive(lg){
+            display: block;
+        }
+    }
     &__narrative{
+        
         &--text1{
             color: #1d1d1d;
             font-weight: 700;
@@ -29,10 +48,24 @@ $sections: ceo, history, vision, client, ci, map;
             font-size: 1.7rem;
             margin-top: 3.5rem;
         }
+        @include responsive(xl){
+            width: 65vw;
+        }
+        @include responsive(lg){
+            text-align: center;
+            width: 100%;
+            &--text1{
+                font-size:  clamp(17px, calc(17px + (8 * ((100vw - 1000px) / 400))), 25px);
+            }
+            &--text2{
+                font-size:  clamp(13px, calc(13px + (4 * ((100vw - 1000px) / 400))), 17px);
+            }
+        }
     }
     &__goals{
         margin-top: 3.5rem;
         background-color: #f0f0f0;
+        
         .container{
             position: relative;
             //padding: 3.5rem 0;
@@ -47,15 +80,38 @@ $sections: ceo, history, vision, client, ci, map;
             b{
                 color: #0a529d;
             }
+            @include responsive(xl){
+                width: 65vw;
+                font-size: clamp(1.8rem, 1.8vw, 2.5rem);
+            }
+            @include responsive(lg){
+                width: 100%;
+                font-size: clamp(14px, calc(14px + (6 * ((100vw - 768px) / 232))), 20px);
+                text-align: center;
+            }
         }
         &--text2{
             color: #1d1d1d;            
             line-height: 1;
             font-size: 1.7rem;
             margin-top: 3.5rem;
+            line-height: 1.5;
             p{
                 +p{
                     margin-top: 3.5rem;
+                }
+            }
+            @include responsive(xl){
+                width: 65vw;
+                p{
+                    font-size: clamp(1.4rem, 1.7vw, 1.7rem);
+                }
+            }
+            @include responsive(md){
+                width: 100%;
+                text-align: center;
+                p{
+                    font-size: 1.3rem;
                 }
             }
         }
@@ -67,11 +123,23 @@ $sections: ceo, history, vision, client, ci, map;
             b{
                 color: #0a529d;
             }
+            @include responsive(md){
+                margin-top: 6rem;
+            }
+            @include responsive(md){
+                margin-top: 5rem;
+                text-align: center;
+            }
         }
         &--titleImg{
             position: absolute;
             bottom: 0;
             right: 0;
+            width: 33.2%;
+            @include responsive(lg){
+                opacity: 0;
+                visibility: hidden;
+            }
         }
     }
 }

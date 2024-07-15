@@ -140,8 +140,6 @@ function headers() {
       const isScrollingDown = currentScrollY > lastScrollY;
 
       if (header.classList.contains('_sub') && breadcrumb) {
-          
-
           if (currentScrollY >= breadcrumbTop) {
               if (isScrollingDown) {
                   header.classList.add('hide');
@@ -196,13 +194,10 @@ function headers() {
       }
   });
 
-  ScrollTrigger.create({
-      trigger: document.body,
-      start: "top top",
-      end: "bottom bottom",
-      onUpdate: updateScrollDirection
-  });
+  // 스크롤 이벤트 리스너 추가
+  window.addEventListener('scroll', updateScrollDirection);
 }
+
 
 // gnb copy => mobile paste
 function updateMobileMenu(){

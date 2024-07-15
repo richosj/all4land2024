@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="history__content--rows">
-                        <div class="history__content--title">
+                        <div class="history__content--title history__title--item01">
                             <div class="inner">
                                 <h2>2019~2024</h2>
                                 <p>도약의 시기</p>
@@ -125,7 +125,7 @@
                     </div>
                     <!-- 2024 -->
                     <div class="history__content--rows _revers">
-                        <div class="history__content--title">
+                        <div class="history__content--title history__title--item02">
                             <div class="inner">
                                 <h2>2010~2018</h2>
                                 <p>가치창출의 시기</p>
@@ -282,5 +282,26 @@
                 }
             }
         })
+
+        const targetClassName = 'history__content--title';
+        const toggleClassName = 'active';
+        // IntersectionObserver 콜백 함수
+        const callback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(toggleClassName);
+                } else {
+                    entry.target.classList.remove(toggleClassName);
+                }
+            });
+        };
+        const observer = new IntersectionObserver(callback, {
+            threshold: 1,
+            rootMargin: '0% 0px 0px 0px' // top에 100% 뷰포트 높이를 설정하여 상단 도달 시 감지
+        });
+        document.querySelectorAll(`.${targetClassName}`).forEach(element => {
+            observer.observe(element);
+        })
+
     </script>
 </body></html>

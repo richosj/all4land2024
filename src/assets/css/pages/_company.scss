@@ -145,6 +145,21 @@ $sections: ceo, history, vision, client, ci, map;
 }
 
 .history{
+    &__title{
+        &--item01{
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+            background-image: url("../images/company/history-1.png");
+            h2,
+            p{
+                color: #fff;
+            }
+        }
+    }
+}
+
+.history{
     &__tabs{
         display: grid;
         grid-template-columns: repeat(3, 1fr);

@@ -146,14 +146,24 @@ $sections: ceo, history, vision, client, ci, map;
 
 .history{
     &__title{
+        border-color: #0a529d;
         &--item01{
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            background-size: cover;
             background-image: url("../images/company/history-1.png");
             h2,
             p{
                 color: #fff;
+            }
+        }
+        &--item02{
+            background-image: url("../images/company/history-2.png");
+            &.active{
+                background-image: url("../images/company/history-2-active.png");
+            }
+        }
+        &--item03{
+            background-image: url("../images/company/history-3.png");
+            &.active{
+                background-image: url("../images/company/history-3-active.png");
             }
         }
     }
@@ -301,8 +311,18 @@ $sections: ceo, history, vision, client, ci, map;
             background-color: #f1f1f2;
             padding: 4rem;
             text-align: right;
-            h2{font-size: 4.8rem;}
-            p{font-size: 2.1rem;}
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+            transition: all 0.5s;
+            h2{font-size: 4.8rem; transition: all 0.5s;}
+            p{font-size: 2.1rem; transition: all 0.5s;}
+            &.active{
+                h2,
+                p{
+                    color: #fff;
+                }
+            }
             @include responsive(lg){
                 height: 20rem;
                 padding: 2rem;

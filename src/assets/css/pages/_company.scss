@@ -358,6 +358,13 @@ $sections: ceo, history, vision, client, ci, map;
     iframe{
         margin-bottom: 9.0rem;
         height: 50rem;
+        @include responsive(lg){
+            height: 35rem;
+        }
+        @include responsive(md){
+            margin-bottom: 4.5rem;
+            height: 25rem;
+        }
         &:last-child{
             margin-bottom: 0;
         }
@@ -366,30 +373,67 @@ $sections: ceo, history, vision, client, ci, map;
 .map-info{
     display: flex;
     margin-bottom: 6.0rem;
+    @include responsive(md){
+        display: block;
+        margin-bottom: 3.0rem;
+    }
     dt{
         font-size: 4.0rem;
         color:#1d1d1d;
+        @include responsive(lg){
+            font-size: 3.0rem;
+        }
+        @include responsive(md){
+            font-size: 2.0rem;
+        }
         strong{
-            margin-left: 10px;
+            margin-left: 1rem;
             display: inline-block;
             font-weight: bold;
         }
     }
     dd{
         padding-left: 8.5rem;
+        @include responsive(lg){
+            padding-left: 5rem;
+        }
+        @include responsive(md){
+            margin-top: 1.5rem;
+            padding-left: 0rem;
+        }
     }
     &__address{
         font-size: 2.4rem;
         margin-bottom: 3.0rem;
         color:#1d1d1d;
+        @include responsive(lg){
+            font-size: 1.8rem;
+            margin-bottom: 2.25rem;
+        }
+        @include responsive(md){
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
     }
     &__tel{
         display: flex;
         color:#1d1d1d;
         div{
             font-size: 2.4rem;
+            @include responsive(lg){
+                font-size: 1.8rem;
+            }
+            @include responsive(md){
+                font-size: 1.2rem;
+            }
             &+div{
                 margin-left: 6.0rem;
+                @include responsive(lg){
+                    margin-left: 4.0rem;
+                }
+                @include responsive(md){
+                    margin-left: 3.0rem;
+                }
             }
             strong{
                 display: inline-block;
@@ -480,4 +524,102 @@ $sections: ceo, history, vision, client, ci, map;
             }
         }
     }
+}
+
+// CI
+.ci{
+	.ci__wrap{
+		.ci__item{
+			display: flex;
+			margin-bottom: 4rem;
+			dt{
+				width:30rem;
+				font-size: 4rem;
+				font-weight: bold;
+			}
+			dd{
+				width: calc(100% - 30rem);
+			}
+			&--info{
+				p{
+					margin-bottom: 3.5rem;
+					&:last-child{
+						margin-bottom: 0;
+					}
+					.colors_blue{
+						color:#127ab7;
+					}
+					.colors_green{
+						color:#8ab63f;}
+				}
+			}
+			&--colors{
+				display: flex;
+				gap:2.4rem;
+				&>dl{
+					width: 50%;
+					border-radius:1.6rem;
+					padding:4rem;
+					color:#fff;
+					dt{
+						margin-bottom: 6rem;
+					}
+					dd{
+						display: flex;
+						gap:2.6rem;
+					}
+				}
+				&--blue{
+					background: #127ab7;
+				}
+				&--green{
+					background: #8ab63f;
+				}
+			}
+			.Signature_down{
+				margin-top: 2rem;
+				background: #000;
+				background-image: url(../images/recruit/ico-down.png);
+				background-position: 13rem;
+				background-repeat: no-repeat;
+				border-radius: 0.5rem;
+				color: #fff;
+				display: inline-block;
+				font-size: 1.8rem;
+				height: 5.6rem;
+				line-height: 5.6rem;
+				padding-left: 6rem;
+				text-align: left;
+				width: 20rem;
+			}
+		}
+		.box{
+			border: 7px solid #f0f0f0;
+			border-radius: 4rem;
+			height: 36rem;
+			margin-bottom: 10rem;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-content: center;
+			justify-content: center;
+			align-items: center;
+			&.signature{
+				gap:15rem;
+			}
+			&.symbol{
+			}
+		}
+	}
+	.txt01{
+		font-size: 1.7rem;
+		color:#1d1d1d;
+		&.mb25{
+			margin-bottom: 2.5rem;
+		}
+	}
+	.txt02{
+		font-size: 1.5rem;
+		color:#999999;
+	}
 }

@@ -520,3 +520,101 @@ $img: '../images/recruit';
 		}
 	}
 }
+
+// CI
+.ci{
+	.ci__wrap{
+		.ci__item{
+			display: flex;
+			margin-bottom: 4rem;
+			dt{
+				width:30rem;
+				font-size: 4rem;
+				font-weight: bold;
+			}
+			dd{
+				width: calc(100% - 30rem);
+			}
+			&--info{
+				p{
+					margin-bottom: 3.5rem;
+					&:last-child{
+						margin-bottom: 0;
+					}
+					.colors_blue{
+						color:#127ab7;
+					}
+					.colors_green{
+						color:#8ab63f;}
+				}
+			}
+			&--colors{
+				display: flex;
+				gap:2.4rem;
+				&>dl{
+					width: 50%;
+					border-radius:1.6rem;
+					padding:4rem;
+					color:#fff;
+					dt{
+						margin-bottom: 6rem;
+					}
+					dd{
+						display: flex;
+						gap:2.6rem;
+					}
+				}
+				&--blue{
+					background: #127ab7;
+				}
+				&--green{
+					background: #8ab63f;
+				}
+			}
+			.Signature_down{
+				margin-top: 2rem;
+				background: #000;
+				background-image: url(../images/recruit/ico-down.png);
+				background-position: 13rem;
+				background-repeat: no-repeat;
+				border-radius: 0.5rem;
+				color: #fff;
+				display: inline-block;
+				font-size: 1.8rem;
+				height: 5.6rem;
+				line-height: 5.6rem;
+				padding-left: 6rem;
+				text-align: left;
+				width: 20rem;
+			}
+		}
+		.box{
+			border: 7px solid #f0f0f0;
+			border-radius: 4rem;
+			height: 36rem;
+			margin-bottom: 10rem;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-content: center;
+			justify-content: center;
+			align-items: center;
+			&.signature{
+				gap:15rem;
+			}
+			&.symbol{
+			}
+		}
+	}
+	.txt01{
+		font-size: 1.7rem;
+		color:#1d1d1d;
+		&.mb25{
+			margin-bottom: 2.5rem;
+		}
+	}
+	.txt02{
+		font-size: 1.5rem;
+		color:#999999;
+	}
+}

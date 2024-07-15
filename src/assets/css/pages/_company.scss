@@ -454,12 +454,28 @@ $sections: ceo, history, vision, client, ci, map;
         background: #f4f4f6;
         padding-top: 9.5rem;
         padding-bottom: 14rem;
+        @include responsive(lg){
+            padding-top: 7rem;
+            padding-bottom: 10.5rem;
+        }
+        @include responsive(md){
+            padding-top: 4.25rem;
+            padding-bottom: 7rem;
+        }
     }
     &__ti{
         text-align: center;
         font-size: 3.2rem;
         color:#1d1d1d;
         margin-bottom: 4.0rem;
+        @include responsive(lg){
+            font-size: 2.4rem;
+            margin-bottom: 3.0rem;
+        }
+        @include responsive(md){
+            font-size: 1.6rem;
+            margin-bottom: 2.0rem;
+        }
     }
     &__li{
         display: grid;
@@ -467,6 +483,18 @@ $sections: ceo, history, vision, client, ci, map;
         grid-template-columns: repeat(6,1fr);
         padding-bottom: 6rem;
         padding-bottom: 6.0rem;
+        @include responsive(lg){
+            gap: 1.4rem 2rem;
+            grid-template-columns: repeat(5,1fr);
+            padding-bottom: 4rem;
+            padding-bottom: 4.0rem;
+        }
+        @include responsive(md){
+            gap: 1.2rem 1rem;
+            grid-template-columns: repeat(4,1fr);
+            padding-bottom: 3rem;
+            padding-bottom: 3.0rem;
+        }
     }
 }
 
@@ -480,6 +508,14 @@ $sections: ceo, history, vision, client, ci, map;
         background: #f4f4f6;
         padding-top: 9.5rem;
         padding-bottom: 14rem;
+        @include responsive(lg){
+            padding-top: 7rem;
+            padding-bottom: 10.5rem;
+        }
+        @include responsive(md){
+            padding-top: 4.25rem;
+            padding-bottom: 7rem;
+        }
     }
     .vision__item--wrap{
         display: flex;
@@ -489,13 +525,34 @@ $sections: ceo, history, vision, client, ci, map;
         background: #fff;   
         border-radius:2.0rem;
         height: 44.5rem;
+        @include responsive(lg){
+            flex-direction: column;
+            height: auto;
+            &:nth-child(even){
+                flex-direction: column-reverse;
+            }
+        }
+        @include responsive(md){
+        }
         &>div{
             width: 50%;
+            @include responsive(lg){
+              width: 100%;
+            }
+            @include responsive(md){
+            }
             &.banners{
                 height: 100%;
                 width:calc(50% - 10px);
+                @include responsive(lg){
+                    width: 100%;
+                    line-height: 0;
+                }
                 img{
                     height: 100%;
+                    @include responsive(lg){
+                        width:100%;
+                    }
                 }
             }
         }
@@ -507,20 +564,39 @@ $sections: ceo, history, vision, client, ci, map;
     &__item{
         &--info{
             margin-left: 7.1rem;
+            @include responsive(lg){
+                margin-left: 0;
+                padding:2rem 2rem 1.5rem;
+            }
+            @include responsive(md){
+                padding: 1.5rem;
+            }
             .eng{
                 color:#0a529d;
                 font-size: 2.5rem;
                 margin-bottom: 2.0rem;
+                @include responsive(md){
+                    font-size: 1.25rem;
+                    margin-bottom: 1.0rem;
+                }
             }
             .kor{
                 color:#1d1d1d;
                 font-size: 4.0rem;
                 margin-bottom: 3.5rem;
+                @include responsive(md){
+                    font-size: 2rem;
+                    margin-bottom: 1.75rem;
+                }
             }
             .txt{
                 color:#717171;
                 font-size: 1.7rem;
                 line-height: 1.5;
+                @include responsive(md){
+                    font-size: 1.1rem;
+                    line-height: 1.2;
+                }
             }
         }
     }

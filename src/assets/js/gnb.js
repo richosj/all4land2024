@@ -255,6 +255,7 @@ function updateMobileMenu(){
 
 const breadCrumbDrop = () => {
   const breadCrumbButton = document.querySelector('.breadcrumb--menu_drop .trigger');
+  const breadCrumbButton2 = document.querySelector('.breadcrumb--sub_list button');
   const breadCrumbMenu = document.querySelector('.first-list');
   
   
@@ -262,6 +263,9 @@ const breadCrumbDrop = () => {
 
   breadCrumbButton.addEventListener('click', () => {
     breadCrumbButton.classList.toggle('_open');
+  })
+  breadCrumbButton2.addEventListener('click', () => {
+    breadCrumbButton2.classList.toggle('_open');
   })
 
 }

@@ -1,6 +1,12 @@
-
+body{
+    &:has(.modal.active){
+        .modal__bg{
+            display: block;
+        }
+    }
+}
 .modal{
-    display: none;
+    //display: none;
     top: 0;
     left: 0;
     width: 100%;
@@ -8,9 +14,14 @@
     z-index: 1043;
     position: fixed;
     outline: 0 !important;
+    opacity: 0;
+    visibility: hidden;
     -webkit-backface-visibility: hidden;
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
     &__bg{
-        display: none;
         top: 0;
         left: 0;
         width: 100%;
@@ -20,6 +31,7 @@
         position: fixed;
         background: #0b0b0b;
         opacity: .8;
+        display: none;
     }
     &__container{
         text-align: center;

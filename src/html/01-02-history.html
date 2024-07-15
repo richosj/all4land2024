@@ -208,7 +208,7 @@
                     </div>
                     <!-- 2018 -->
                     <div class="history__content--rows">
-                        <div class="history__content--title">
+                        <div class="history__content--title history__title--item03">
                             <div class="inner">
                                 <h2>2004~2009</h2>
                                 <p>성장의 시기</p>
@@ -288,6 +288,7 @@
         // IntersectionObserver 콜백 함수
         const callback = (entries, observer) => {
             entries.forEach(entry => {
+                //console.log(entry.isIntersecting,entry.intersectionRatio)
                 if (entry.isIntersecting) {
                     entry.target.classList.add(toggleClassName);
                 } else {
@@ -296,8 +297,7 @@
             });
         };
         const observer = new IntersectionObserver(callback, {
-            threshold: 1,
-            rootMargin: '0% 0px 0px 0px' // top에 100% 뷰포트 높이를 설정하여 상단 도달 시 감지
+            threshold: 1
         });
         document.querySelectorAll(`.${targetClassName}`).forEach(element => {
             observer.observe(element);

@@ -213,6 +213,13 @@ $sections: ceo, history, vision, client, ci, map;
     iframe{
         margin-bottom: 9.0rem;
         height: 50rem;
+        @include responsive(lg){
+            height: 35rem;
+        }
+        @include responsive(md){
+            margin-bottom: 4.5rem;
+            height: 25rem;
+        }
         &:last-child{
             margin-bottom: 0;
         }
@@ -221,30 +228,65 @@ $sections: ceo, history, vision, client, ci, map;
 .map-info{
     display: flex;
     margin-bottom: 6.0rem;
+    @include responsive(md){
+        margin-bottom: 3.0rem;
+    }
     dt{
         font-size: 4.0rem;
         color:#1d1d1d;
+        @include responsive(lg){
+            font-size: 3.0rem;
+        }
+        @include responsive(md){
+            font-size: 2.0rem;
+        }
         strong{
-            margin-left: 10px;
+            margin-left: 1rem;
             display: inline-block;
             font-weight: bold;
         }
     }
     dd{
         padding-left: 8.5rem;
+        @include responsive(lg){
+            padding-left: 5rem;
+        }
+        @include responsive(md){
+            padding-left: 4.25rem;
+        }
     }
     &__address{
         font-size: 2.4rem;
         margin-bottom: 3.0rem;
         color:#1d1d1d;
+        @include responsive(lg){
+            font-size: 1.8rem;
+            margin-bottom: 2.25rem;
+        }
+        @include responsive(md){
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
     }
     &__tel{
         display: flex;
         color:#1d1d1d;
         div{
             font-size: 2.4rem;
+            @include responsive(lg){
+                font-size: 1.8rem;
+            }
+            @include responsive(md){
+                font-size: 1.2rem;
+            }
             &+div{
                 margin-left: 6.0rem;
+                @include responsive(lg){
+                    margin-left: 4.0rem;
+                }
+                @include responsive(md){
+                    margin-left: 3.0rem;
+                }
             }
             strong{
                 display: inline-block;

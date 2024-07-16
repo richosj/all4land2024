@@ -421,7 +421,11 @@ $img: '../images/recruit';
 		}
 		@include responsive(md){
 			font-size: 1.2rem;
-			height: 10rem;
+			height: 14rem;
+		}
+		@include responsive(sm){
+			font-size: 1.2rem;
+			height: 8rem;
 		}
 		&:before{
 			position: absolute;
@@ -801,7 +805,6 @@ $img: '../images/recruit';
 					font-size: 1.3rem;
 					padding: 1.5rem;
 					width: 49%;
-					
 				}
 				.small{
 					margin-top: 0.5rem;
@@ -847,6 +850,9 @@ $img: '../images/recruit';
 			color:#fff;
 			padding-top: 8rem;
 			height: auto;
+			@include responsive(md){
+				padding-top: 4rem;
+			}
 			dl{
 				dd{
 					&::before{

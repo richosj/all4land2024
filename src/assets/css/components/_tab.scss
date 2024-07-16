@@ -14,6 +14,10 @@
     border-radius: 1rem;
     > div{
         border-left: 1px solid #ddd;
+        @include responsive(md){
+            &:nth-child(3),
+            &:nth-child(4){border-top: 1px solid #ddd;}
+        }
         &:has(a[aria-selected="true"]){
             border-color: #0a529d;
         }
@@ -36,7 +40,6 @@
             @include responsive(md){
                 height: 4rem;
                 font-size: 1.3rem;
-
             }
             &[aria-selected="true"]{
                 color: #fff;

@@ -13,7 +13,7 @@ aligncesClose.addEventListener('click', () => {
 
 
 // 모든 버튼 요소를 선택합니다.
-const buttons = document.querySelectorAll('button[data-trigger="modal"]');
+const buttons = document.querySelectorAll('[data-trigger="modal"]');
 
 // 모달 열기 함수
 const openModal = (modal) => {
@@ -29,11 +29,34 @@ const closeModal = (modal) => {
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const target = button.getAttribute('data-target');
+        const targetVideo = button.getAttribute('data-modal-type');
         //const modal = document.querySelector(target);
         const modal = document.querySelector(`[data-modal="${target}"]`);
-        
+        //alert(targetVideo)
         if (modal) {
             openModal(modal);
+
+            if(targetVideo){
+                const existingVideo = document.getElementById('dynamicVideo');
+                if (existingVideo) {
+                    existingVideo.parentNode.removeChild(existingVideo);
+                }
+                
+                const video = document.createElement('video');
+                video.id = 'dynamicVideo';
+                video.controls = true; // 컨트롤러를 추가합니다.
+    
+                const source = document.createElement('source');
+                source.src = '/assets/Inpainting.mp4'; // 여기에 비디오 파일의 경로를 넣습니다.
+                source.type = 'video/mp4'; // 비디오 파일의 타입
+    
+                // 비디오 태그에 소스 추가
+                video.appendChild(source);
+                document.getElementById('videoContainer').appendChild(video);
+    
+                video.play();
+            }
+            
             // 모달 닫기 버튼 이벤트 리스너를 추가합니다.
             const closeButton = modal.querySelector('.modal__close');
             if (closeButton) {

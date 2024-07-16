@@ -92,8 +92,9 @@ body:has(header.up){
                 width: 8px;height: 5px;
             }
             @include responsive(lg) {
-                padding-right: 2.5rem;
-                padding-left: 2.5rem;
+                // padding-right: 2.5rem;
+                padding-right: 0;
+                width: 100%;
                 span{
                     font-size: 1.4rem;
                 }

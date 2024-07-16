@@ -9,14 +9,12 @@ const refreshGsapAnimations = () => {
 
   const isNonScroll = document.querySelector('[data-current]');
 
-  
 
   const introTitle = document.querySelector(".intro--banner_title");
   const introBackground = document.querySelector(".intro--banner_bg");
   
   if(isNonScroll.getAttribute('data-current') == "board"){ // 특정 페이지에서 기능 미작동을 위한 조건문
-  
-
+    //alert('? ')
   } else {
     let introStroy = gsap.timeline({
       scrollTrigger: {
@@ -37,8 +35,9 @@ const refreshGsapAnimations = () => {
     introStroy.to(introTitle, { color : '#fff' , duration : 0.4});
   }
   
-  if(isNonScroll.classList.contains('promotion')) return;
-
+  if(isNonScroll.classList.contains('promotion')){ 
+    return
+  };
   let introStroyBg = gsap.timeline({ 
     scrollTrigger: {
         id: 'sub_intro',

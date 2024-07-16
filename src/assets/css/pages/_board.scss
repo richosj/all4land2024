@@ -3,12 +3,27 @@
 
 
 .press ._board{
+    @include responsive(xl){
+        max-width: 100% !important;
+        height: auto !important;
+        border-radius: 0 !important;
+    }
     .press__latest{
         padding: 8rem 10rem;
         display: flex;
         align-items: center;
         position: relative;
         z-index: 4;
+        @include responsive(xl){
+            padding: 8rem 5.2vw;
+        }
+        @include responsive(lg){
+            padding: 3rem 0;
+        }
+        @include responsive(md){
+            flex-direction: column;
+            padding: 2.5rem 0;
+        }
         .thumb{
             width: 50%;
             a{
@@ -24,31 +39,62 @@
                     transform: translate(-50%,-50%);
                     width: 100%;
                     height: 100%;
+                    object-fit: cover;
                 }
+            }
+            @include responsive(xl){
+                width: 40%;
+            }
+            @include responsive(md){
+                width: 100%;
             }
         }
         .info{
             width: 50%;
             padding-left: 5.5rem;
+            @include responsive(xl){
+                width: 60%;
+                padding-left: 3rem;
+            }
+            @include responsive(md){
+                width: 100%;
+                padding-left: 0;
+                margin-top: 2rem;
+            }
+            @include responsive(md){
+                        margin-top: 2rem;
+                    }
             .subject{
                 a{
                     color: #fff;
                     font-weight: 700;
                     line-height: 1.5;
                     font-size: 4rem;
+                    @include responsive(xl){
+                        font-size: clamp(2rem, 2.083vw, 4rem);
+                    }
                 }
             }
             .desc{
                 font-size: 1.7rem;
-                line-height: 1.4;
+                line-height: 1.5;
                 margin: 2rem 0;
                 a{
                     color: #fff;
+                }
+                @include responsive(xl){
+                    font-size: 1.214vw;
+                }
+                @include responsive(lg){
+                    font-size: 1.4rem;
                 }
             }
             .date{
                 color: #fff;
                 font-size: 1.5rem;
+                @include responsive(md){
+                    font-size: 1.2rem;
+                }
             }
             .link{
                 a{
@@ -62,6 +108,13 @@
                     padding: 2rem 4rem;
                     border-radius: 3rem;
                     margin-top: 2.5rem;
+                    @include responsive(xl){
+                        font-size: clamp(1.5rem, 1.357vw, 1.9rem);
+                    }
+                    @include responsive(lg){
+                        padding: 1rem 2rem;
+                        font-size: 1.3rem;
+                    }
                     i{
                         display: inline-block;
                         vertical-align: top;
@@ -260,7 +313,7 @@
             }
             @include responsive(lg){
                 font-size: clamp(1.2rem,2.5vw,1.8rem);
-                height: 4rem;
+                height: 7vw;
             }
         }
         &__desc{
@@ -283,6 +336,10 @@
                 font-size: 1.3rem;
                 margin-top: 1.2rem;
                 height: 3.5rem;
+            }
+            @include responsive(lg){
+                font-size: 1.2rem;
+                height: 3.3rem;
             }
         }
         &__date{
@@ -548,6 +605,10 @@
             background: #000;
             overflow: hidden;
             border-radius: 2rem;
+            @include responsive(xl){
+                padding-bottom: 56.25%;
+                border-radius: 0;
+            }
             .thumb{
                 position: absolute;
                 left: 50%;
@@ -571,6 +632,15 @@
                 height: 25rem;
                 z-index: 3;
                 @include set-background('../images/board/icon-play.png');
+                @include responsive(lg){
+                    width: 12.5rem;
+                    height: 12.5rem;
+                    background-size: cover;
+                }
+                @include responsive(md){
+                    width: 6rem;
+                    height: 6rem;
+                }
             }
             &::after{
                 content:"";
@@ -603,6 +673,15 @@
                     color: #fff;
                     font-size: 1.7rem;
                     margin-top: 2.4rem;
+                }
+                @include responsive(md){
+                    .titles{
+                        font-size: 2.2rem;
+                    }
+                    .date{
+                        font-size: 1.3rem;
+                        margin-top: 1rem;
+                    }
                 }
             }
             iframe{

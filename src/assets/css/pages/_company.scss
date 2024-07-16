@@ -241,7 +241,7 @@ $sections: ceo, history, vision, client, ci, map;
             }
             @include responsive(lg){
                 &-bar{
-                    left: 1.7rem;
+                    left: 2.7rem;
                     transform: translateX(0%);
                     width: .2rem;
                 }
@@ -259,7 +259,7 @@ $sections: ceo, history, vision, client, ci, map;
             @include responsive(lg){
                 gap: 0;
                 flex-direction: column;
-                padding-left: 2rem;
+                padding-left: 4rem;
             }
             &:not(:last-child){
                 margin-bottom: 12rem;

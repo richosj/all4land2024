@@ -29,6 +29,11 @@ $icons: (
         &-#{$name}{
             &._white {
                 @include icon("../images/icon/icon-#{$name}-white.png", $width, $height);
+                @include responsive(md){
+                    width: 1.2rem;height: 1.2rem;
+                    background-size: cover;
+                    background-position: 50% 50%;
+                }
             }
         }
     }

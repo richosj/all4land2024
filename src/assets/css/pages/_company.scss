@@ -145,6 +145,13 @@ $sections: ceo, history, vision, client, ci, map;
             }
         }
     }
+    .effect-txt{
+        opacity: 0;
+        transition: all 1.5s;
+        &.active{
+            opacity: 1;
+        }
+    }
 }
 
 .history{
@@ -604,12 +611,12 @@ $sections: ceo, history, vision, client, ci, map;
                 &.active{
                     img{
                         opacity: 1;
-                        top: 0;
+                        top: 0; 
                         left: 0;
                     }
                     &::after{
                         left: 100%;
-                        opacity: 0.2;
+                        opacity: 0.1;
                         transition: left 1s cubic-bezier(0.71, -0.03, 0.14, 0.99) 0.5s;
                     }
                 }

@@ -8,10 +8,11 @@
     @include responsive(md){
         flex-wrap:wrap;
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        .full{
+            grid-column: 1/ -1;
+        }
     }
-    .full{
-        grid-column: 1/ -1;
-    }
+    
     overflow: hidden;
     border: 1px solid #c6c6c6;
     border-radius: 1rem;

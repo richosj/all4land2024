@@ -145,13 +145,6 @@ $sections: ceo, history, vision, client, ci, map;
             }
         }
     }
-    .effect-txt{
-        opacity: 0;
-        transition: all 1.5s;
-        &.active{
-            opacity: 1;
-        }
-    }
 }
 
 .history{
@@ -885,4 +878,13 @@ $sections: ceo, history, vision, client, ci, map;
             font-size: 1.1rem;
         }
 	}
+}
+
+
+.effect-txt{
+    opacity: 0;
+    transition: all 1.5s;
+    &.active{
+        opacity: 1;
+    }
 }

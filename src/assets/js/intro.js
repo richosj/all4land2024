@@ -82,9 +82,7 @@ const intro = document.querySelector(".intro--banner");
 
 if (!intro) return;
 
-if(isNonScroll.getAttribute('data-current') == "board"){
-  
-} else {
+
   var introHeadAction = {
     enter: function(){
       bannerTitle.classList.add('is-break');
@@ -141,53 +139,56 @@ if(isNonScroll.getAttribute('data-current') == "board"){
         }
     }
   });
-}
 
 
 
-ScrollTrigger.matchMedia({
-  // Mobile
-  "(max-width: 767px)": function() {
-    visualElement.removeAttribute('style');
-      gsap.to(visualElement, { width: '100vw', duration: 1,
-          scrollTrigger: {
-              trigger: visualElement,
-              start: 'top 250px',
-              end: 'bottom top',
-              scrub: 1,
-              ease: 'power4',
-              //markers: true
-          }
-      });
-  },
-  "(max-width: 1279px)": function() {
-      visualElement.removeAttribute('style');
-      gsap.to(visualElement, { width: '100vw', duration: 1,
-          scrollTrigger: {
-              trigger: visualElement,
-              start: 'top 200px',
-              end: 'top',
-              scrub: 1,
-              ease: 'power4',
-              //markers: true
-          }
-      });
-  },
-  // Desktop
-  "(min-width: 1280px)": function() {
-    visualElement.removeAttribute('style');
-      gsap.to(visualElement, { width: '100vw', duration: 1,
-          scrollTrigger: {
-              trigger: visualElement,
-              start: 'top 400px',
-              end: 'top',
-              scrub: 1,
-              ease: 'power4',
-              //markers: true
-          }
-      });
+  if(isNonScroll.getAttribute('data-current') == "board"){
+  
+  } else {
+    ScrollTrigger.matchMedia({
+      // Mobile
+      "(max-width: 767px)": function() {
+        visualElement.removeAttribute('style');
+          gsap.to(visualElement, { width: '100vw', duration: 1,
+              scrollTrigger: {
+                  trigger: visualElement,
+                  start: 'top 250px',
+                  end: 'bottom top',
+                  scrub: 1,
+                  ease: 'power4',
+                  //markers: true
+              }
+          });
+      },
+      "(max-width: 1279px)": function() {
+          visualElement.removeAttribute('style');
+          gsap.to(visualElement, { width: '100vw', duration: 1,
+              scrollTrigger: {
+                  trigger: visualElement,
+                  start: 'top 200px',
+                  end: 'top',
+                  scrub: 1,
+                  ease: 'power4',
+                  //markers: true
+              }
+          });
+      },
+      // Desktop
+      "(min-width: 1280px)": function() {
+        visualElement.removeAttribute('style');
+          gsap.to(visualElement, { width: '100vw', duration: 1,
+              scrollTrigger: {
+                  trigger: visualElement,
+                  start: 'top 400px',
+                  end: 'top',
+                  scrub: 1,
+                  ease: 'power4',
+                  //markers: true
+              }
+          });
+      }
+    });
   }
-});
 }
 introBanner()
 // 윈도우 리사이즈 이벤트 핸들러 추가

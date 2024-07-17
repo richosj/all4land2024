@@ -182,8 +182,17 @@
     }
 }
 
+body{
+    &:has(header.hide){
+        #btnTop{
+            opacity: 1;
+        }
+    }
+}
 #btnTop{
     position: fixed;
+    transition: all 0.25s;
+    opacity: 0;
     bottom: 20px;
     right: 20px;
     z-index: 1000;

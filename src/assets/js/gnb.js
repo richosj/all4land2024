@@ -168,28 +168,26 @@ function headers() {
               }
           }
       }
-
       lastScrollY = currentScrollY;
   }
 
   // 초기 스크롤 상태 반영
   document.addEventListener('DOMContentLoaded', () => {
       lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
-
       // 초기 스크롤 상태 반영
       if (header.classList.contains('_sub') && breadcrumb) {
           const breadcrumbTop = breadcrumb.getBoundingClientRect().top + window.scrollY;
 
           if (lastScrollY >= breadcrumbTop) {
-              header.classList.add('up');
+              header.classList.add('up hide');
           } else {
-              header.classList.remove('up');
+              header.classList.remove('up hide');
           }
       } else {
           if (lastScrollY > 50) {
-              header.classList.add('up');
+              header.classList.add('up hide');
           } else {
-              header.classList.remove('up');
+              header.classList.remove('up hide');
           }
       }
   });
@@ -296,9 +294,13 @@ const init = () => {
       OldGlobalCheckVar = screenType;
     }
   });
-  
+
+  document.getElementById('btnTop').addEventListener('click', function() {
+    gsap.to(window, {duration: 1, scrollTo: {y: 0, autoKill: true}});
+  });
+
   initClassList();
-  
+
   btnMobile.addEventListener('click', handleMobileButtonClick);
   mobileMenus.forEach(menu => {
     menu.addEventListener('click', handleMobileMenuClick);

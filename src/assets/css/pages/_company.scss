@@ -792,18 +792,16 @@ $sections: ceo, history, vision, client, ci, map;
 			align-content: center;
 			justify-content: center;
 			align-items: center;
+            img{
+                object-fit: cover
+            }
             @include responsive(lg){
                 margin-bottom: 7.5rem;
-                img{
-                    max-width: 50%;
-                }
             }
             @include responsive(md){
                 margin-bottom: 5rem;
-                height: 18rem;
-                img{
-                    max-width: 25%;
-                }
+                padding: 3rem;
+                height: auto;
             }
 			&.signature{
 				gap:15rem;
@@ -811,10 +809,15 @@ $sections: ceo, history, vision, client, ci, map;
                     gap: 11rem;
                 }
                 @include responsive(md){
-                    gap:7.5rem;
+                    gap:5rem;
                 }
 			}
 			&.symbol{
+                @include responsive(md){
+                    img{
+                        max-width: 50%;
+                    }
+                }
 			}
 		}
 	}

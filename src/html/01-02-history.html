@@ -23,13 +23,13 @@
             })
             <div class="history__wrap">
                 <nav class="history__tabs">
-                    <button type="button" class="_selected">
+                    <button type="button" class="_selected"  data-target="y2024">
                         <span>2019 ~ 2024</span>
                     </button>
-                    <button type="button" class="">
+                    <button type="button" data-target="y2018">
                         <span>2010 ~ 2018</span>
                     </button>
-                    <button type="button" class="">
+                    <button type="button"  data-target="y2009">
                         <span>2004 ~ 2009</span>
                     </button>
                 </nav>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
 
-                    <div class="history__content--rows">
+                    <div class="history__content--rows"  id="y2024">
                         <div class="history__content--title history__title--item01">
                             <div class="inner">
                                 <h2>2019~2024</h2>
@@ -124,7 +124,7 @@
                         </div>
                     </div>
                     <!-- 2024 -->
-                    <div class="history__content--rows _revers">
+                    <div class="history__content--rows _revers" id="y2018">
                         <div class="history__content--title history__title--item02">
                             <div class="inner">
                                 <h2>2010~2018</h2>
@@ -207,7 +207,7 @@
                         </div>
                     </div>
                     <!-- 2018 -->
-                    <div class="history__content--rows">
+                    <div class="history__content--rows" id="y2009">
                         <div class="history__content--title history__title--item03">
                             <div class="inner">
                                 <h2>2004~2009</h2>
@@ -265,10 +265,44 @@
     </div>
     @@include('./include/footer.html')
     <script>
-        
+          gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+
+
         const historyContent = document.querySelector('.history__content');
         const historyMnHeader = document.querySelector('.header').offsetHeight;
         const progressIndicator = document.querySelector('.progress-indicator');
+
+        // Select all tab buttons
+        const tabButtons = document.querySelectorAll('.history__tabs button');
+
+
+        // Add click event listener to each button
+        tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Get the target ID from the data-target attribute
+            const targetId = this.getAttribute('data-target');
+            const targetElement = document.getElementById(targetId);
+
+            tabButtons.forEach(btn => btn.classList.remove('_selected'));
+            // Add _selected class to the clicked button
+            this.classList.add('_selected');
+
+            // Scroll to the target element using GSAP
+            gsap.to(window, {
+            duration: 1,
+            scrollTo: {
+                y: targetElement,
+                offsetY: document.querySelector('.breadcrumb').offsetHeight, // Adjust offset as needed
+                autoKill: true
+            }
+            });
+        });
+        });
+
+
+
+        
 
         let historyTimeline = gsap.timeline({
             scrollTrigger: {
@@ -304,6 +338,7 @@
         })
 
         window.addEventListener('resize', () => {
+            
             ScrollTrigger.refresh();
         });
     </script>

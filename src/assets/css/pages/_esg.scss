@@ -630,7 +630,7 @@ $sections: esg, envir, human, health, ethics, community;
     }
     &__end{
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         gap: 0 1.5rem;
         button{
             color: #fff;
@@ -640,10 +640,6 @@ $sections: esg, envir, human, health, ethics, community;
             border-radius: 1rem;
             transition: all 0.25s;
             &:nth-child(1){
-                background-color: #fff;
-                border: 1px solid #555555;
-            }
-            &:nth-child(2){
                 background-color: #0a529d;
                 border: 1px solid #0a529d;
                 &:hover,

@@ -31,11 +31,23 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
         background-position: calc(100% + 5.5rem) calc(100% + 5.5rem);
         background-image: url("../images/business/logo.png");
         background-repeat: no-repeat;
+        @include responsive(lg){
+            width: 100vw !important;
+            max-width: calc(100vw - var(--gap-md) * 2);
+        }
         &.width-auto{
             width: auto;
+            @include responsive(lg){
+                width: 100%;
+                max-width: calc(100vw - var(--gap-md) * 2);
+            }
         }
         &._video{
             width: 85rem;
+            @include responsive(lg){
+                width: 100%;
+                max-width: calc(100vw - var(--gap-md) * 2);
+            }
             header{
                 padding: 0;
                 border-bottom: 0;
@@ -47,12 +59,19 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
             border-bottom: 1px solid #f0f0f0;
             position: relative;
             padding: 4.5rem 0 2rem;
+            @include responsive(lg){
+                padding-top: 2.5rem;
+                padding-bottom: 2.5rem;
+            }
             h2{
                 text-align: center;
                 font-weight: 500;
                 color: #1d1d1d;
                 font-size: 3.2rem;
                 grid-column: span 2;
+                @include responsive(lg){
+                    font-size: 2rem;
+                }
             }
             .modal__close{
                 position: absolute;
@@ -65,6 +84,12 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
                 width: 4rem;
                 height: 4rem;
                 background-color: #000;
+                @include responsive(lg){
+                    width: 3rem;
+                    height: 3rem;
+                    top: 2.5rem;
+                    right: 3rem;
+                }
                 i{
                     font-size: 0;
                 }
@@ -75,11 +100,26 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
         }
         &--inner{
             padding: 4rem 4rem 12rem;
+            @include responsive(lg){
+                padding: 0 2rem 4.5rem;
+                margin-top: 4.5rem;
+                overflow-y: auto;
+                max-height: calc(100svh - 7.5rem - 1.5rem - 9rem);
+            }
             &._grid-2{
                 display: grid;
                 grid-template-columns: repeat(2,1fr);
                 gap : 5rem 10rem;
                 width: 82rem;
+                @include responsive(lg){
+                    width: 100%;
+                    gap: 2rem 5rem;
+                    max-width: calc(100vw - var(--gap-md) * 2);
+                }
+                @include responsive(md){
+                    grid-template-columns: repeat(1,1fr);
+                    gap: 3rem 0;
+                }
             }
             
         }
@@ -371,7 +411,7 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
                 color: #fff;
                 padding-left: 6rem;
                 font-size: 1.9rem;
-                width: 55%;
+                width: 75%;
                 max-width:340px;
                 height: 5rem;
                 @include responsive(lg){

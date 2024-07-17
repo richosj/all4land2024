@@ -245,7 +245,7 @@ $sections: ceo, history, vision, client, ci, map;
                 bottom: 0;
                 left: 50%;
                 transform: translate(-50%, 50%);
-                width: 7.3rem;
+                width: 7rem;
                 height: 7.3rem;
                 @include set-background("#{$img}/history-head.png");
             }

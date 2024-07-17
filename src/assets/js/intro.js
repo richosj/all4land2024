@@ -72,8 +72,6 @@
 
 function introBanner() {
 
-
-
 const isNonScroll = document.querySelector('[data-current]');
 
 const bannerTitle = document.querySelector('.intro--banner_title');
@@ -85,67 +83,67 @@ const intro = document.querySelector(".intro--banner");
 if (!intro) return;
 
 if(isNonScroll.getAttribute('data-current') == "board"){
-  return;
+  
+} else {
+  var introHeadAction = {
+    enter: function(){
+      bannerTitle.classList.add('is-break');
+      bannerTitle.style.marginTop = '0';
+      bannerTitle.style.top = '45%';
+      bannerTitle.style.transform = 'translateY(-50%)';
+    },
+    leave: function(){
+      bannerTitle.classList.remove('is-break');
+      bannerTitle.removeAttribute('style');
+    }
+  };
+
+  gsap.to('.page_title', { color: '#ffffff', duration: 1,
+    scrollTrigger: {
+        trigger: visualWrap,
+        start: 'top 50%',
+        end: 'top',
+        scrub: 1,
+        toggleClass: { targets: bannerTitle , className: 'is-active' }
+    }
+  });
+
+  gsap.to('.sub_title_desc', { color: '#ffffff', duration: 1,
+    scrollTrigger: {
+        trigger: visualWrap,
+        start: 'top 50%',
+        end: 'top',
+        scrub: 1,
+        toggleClass: { targets: bannerTitle, className: 'is-active' }
+    }
+  });
+  gsap.to(bannerTitle, {
+    scrollTrigger: {
+        trigger: visualElement,
+        start: 'top 12%',
+        end: 'bottom',
+        onEnter: function(){
+            introHeadAction.enter();
+        },
+        onLeave: function(){
+            // 클래스 추가
+            bannerTitle.classList.add('is-break');
+
+            // top 스타일을 현재 윈도우 스크롤 위치로 설정
+            bannerTitle.style.top = `${window.scrollY}px`;
+            introHeadAction.enter();
+        },
+        onEnterBack: function(){
+            introHeadAction.enter();
+        },
+        onLeaveBack: function(){
+            introHeadAction.leave();
+        }
+    }
+  });
 }
 
 
-var introHeadAction = {
-  enter: function(){
-    bannerTitle.classList.add('is-break');
-    bannerTitle.style.marginTop = '0';
-    bannerTitle.style.top = '45%';
-    bannerTitle.style.transform = 'translateY(-50%)';
-  },
-  leave: function(){
-    bannerTitle.classList.remove('is-break');
-    bannerTitle.removeAttribute('style');
-  }
-};
-
-gsap.to('.page_title', { color: '#ffffff', duration: 1,
-  scrollTrigger: {
-      trigger: visualWrap,
-      start: 'top 50%',
-      end: 'top',
-      scrub: 1,
-      toggleClass: { targets: bannerTitle , className: 'is-active' }
-  }
-});
-
-gsap.to('.sub_title_desc', { color: '#ffffff', duration: 1,
-  scrollTrigger: {
-      trigger: visualWrap,
-      start: 'top 50%',
-      end: 'top',
-      scrub: 1,
-      toggleClass: { targets: bannerTitle, className: 'is-active' }
-  }
-});
-
-gsap.to(bannerTitle, {
-  scrollTrigger: {
-      trigger: visualElement,
-      start: 'top 12%',
-      end: 'bottom',
-      onEnter: function(){
-          introHeadAction.enter();
-      },
-      onLeave: function(){
-           // 클래스 추가
-          bannerTitle.classList.add('is-break');
-
-          // top 스타일을 현재 윈도우 스크롤 위치로 설정
-          bannerTitle.style.top = `${window.scrollY}px`;
-          introHeadAction.enter();
-      },
-      onEnterBack: function(){
-          introHeadAction.enter();
-      },
-      onLeaveBack: function(){
-          introHeadAction.leave();
-      }
-  }
-});
 
 ScrollTrigger.matchMedia({
   // Mobile
@@ -185,7 +183,7 @@ ScrollTrigger.matchMedia({
               end: 'top',
               scrub: 1,
               ease: 'power4',
-              // markers: true
+              //markers: true
           }
       });
   }

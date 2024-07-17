@@ -11,6 +11,17 @@ $img: '../images/esg';
     .md-hide{display: none;}
 }
 
+$sections: esg, envir, human, health, ethics, community;
+@each $section in $sections {
+    .#{$section} {
+        .intro--banner_bg {
+            .intro--visual{
+                background-image: url('#{$img}/bg-#{$section}.png');
+            }
+        }
+    }
+}
+
 .esg{
     .intro--banner_bg{background-image: url('#{$img}/bg-esg.png');}
     &__slogan{
@@ -400,8 +411,6 @@ $img: '../images/esg';
 
 .envir{
     padding-bottom: 0;
-    .intro--banner_bg{background-image: url('#{$img}/bg-envir.png');}
-    
     .scroll__background{
         background: linear-gradient(to bottom, #7eb376 0%, #74af79, #6aaa7c 100%);
     }
@@ -414,7 +423,6 @@ $img: '../images/esg';
 
 .human{
     padding-bottom: 0;
-    .intro--banner_bg{background-image: url('#{$img}/bg-human.png');}
     &__wrap{
         position: relative;
     }
@@ -431,7 +439,6 @@ $img: '../images/esg';
 
 .health{
     padding-bottom: 0;
-    .intro--banner_bg{background-image: url('#{$img}/bg-health.png');}
     &__wrap{
         position: relative;
     }
@@ -447,7 +454,6 @@ $img: '../images/esg';
 
 .ethics{
     padding-bottom: 0;
-    .intro--banner_bg{background-image: url('#{$img}/bg-ethics.png');}
     &__wrap{
         position: relative;
     }
@@ -462,7 +468,6 @@ $img: '../images/esg';
 }
 
 .community{
-    .intro--banner_bg{background-image: url('#{$img}/bg-commu.png');}
     &__wrap{
         position: relative;
     }
@@ -518,7 +523,9 @@ $img: '../images/esg';
                 }
             }
             .community__frm--col{
-                &:nth-child(2){margin-top: 4rem;padding-top: 4rem;border-top: 1px solid #c6c6c6;}
+                @include responsive(lg){
+                    &:nth-child(2){margin-top: 4rem;padding-top: 4rem;border-top: 1px solid #c6c6c6;}
+                }
             }
         }
         @include responsive(lg){
@@ -626,7 +633,7 @@ $img: '../images/esg';
     }
     &__end{
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         gap: 0 1.5rem;
         button{
             color: #fff;
@@ -634,11 +641,18 @@ $img: '../images/esg';
             height: 6rem;
             width: 12rem;
             border-radius: 1rem;
+            transition: all 0.25s;
             &:nth-child(1){
-                background-color: #000;
+                background-color: #fff;
+                border: 1px solid #555555;
             }
             &:nth-child(2){
                 background-color: #0a529d;
+                border: 1px solid #0a529d;
+                &:hover,
+                &:focus{
+                    background-color: #0660a5;
+                }
             }
             @include responsive(lg){
                 height: 4rem;

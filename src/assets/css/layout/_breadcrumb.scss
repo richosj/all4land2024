@@ -24,7 +24,7 @@ body:has(header.up){
     right: 0;
     z-index: 1;
     background-color: #f1f6f9;
-    @include responsive(xxl) {
+    @include responsive(xl) {
         top: var(--lg-header)
     }
     &--container{

@@ -21,12 +21,13 @@
         }
     }
 }
+/*
 body{
-    &:has(.header.hide){
+    &:has(.header.hide, .header.up){
         &:not(:has(.promotion , .press)){
             .intro--banner{
                 &_title{
-                    margin-top: 6rem;
+                    margin-top: 17rem;
                 }
             }
         }
@@ -38,34 +39,33 @@ body{
             }
         }
     }
-}
+}*/
 .intro--banner{
     position: relative;
     margin-bottom: 15rem;
+    max-width:var(--xl);
+    margin-left: auto;
+    margin-right: auto;
     @include responsive(lg){
         margin-bottom: 10rem;
     }
     @include responsive(md){
         margin-bottom: 7rem;
     }
-    &_point{
-        //margin-top: 15rem;
-        padding-top: 24rem;
-        @include responsive(lg){
-            padding-top: 12rem;
-        }
-    }
     &_title{
-        position: absolute;
-        //transition: all 0.25s;
-        transition: margin 0.25s;
+        position: fixed;
+        //transition: margin 0.25s;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 2;
-        height: 24rem;
+        margin-top: 23rem;
+        //height: 24rem;
+        &.is-break{
+            position: absolute;
+        }
         @include responsive(lg){
-            height: 12rem;
+            margin-top: 15rem;
         }
         h2,p{
             transition: color 0.25s;
@@ -88,7 +88,7 @@ body{
                 padding-bottom: 1.5rem;
             }
             p{
-                font-size: clamp(1.4rem, 3.8vw, 4rem);
+                font-size: clamp(2rem, 3.8vw, 4rem);
             }
         }
     }
@@ -99,15 +99,38 @@ body{
     &_bg{
         position: relative;
         height: 50rem;
-        overflow: hidden;
-        border-radius: 1rem;
-        background-color: #f8f8f8;
-        margin: 0 auto 0;
-        max-width: var(--xl);
-        background-repeat: no-repeat;
-        background-position: 50% 0;
+        margin-top: 23rem;
+        @include responsive(xl){
+            margin-top: 28rem;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
         @include responsive(lg){
-            height: 25rem;
+            height: 40rem;
+            margin-top: 15rem;
+        }
+        @include responsive(md){
+            height: 35rem;
+            //margin-top: 15rem;
+        }
+        
+        .intro--visual{
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            min-width: 100%;
+            width: 1440px;
+            transform: translateX(-50%);
+            height: 100%;
+            border-radius: 20px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+
+            @include responsive(xl){
+                width: 100%;
+            }
         }
         &.__business{
             background-image: url("../images/business/bg.png");
@@ -120,6 +143,7 @@ body{
             width: 100%;height: 100%;
             background: #000;
             opacity: 0;
+            display: none;
         }
         @include responsive2(xxl) {
             min-width: map-get($container-max-widths,xl);

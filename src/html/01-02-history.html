@@ -303,5 +303,8 @@
             observer.observe(element);
         })
 
+        window.addEventListener('resize', () => {
+            ScrollTrigger.refresh();
+        });
     </script>
 </body></html>

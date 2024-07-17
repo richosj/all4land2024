@@ -5,7 +5,10 @@ $img: '../images/recruit';
 
 .recruit{
 	.intro--banner_bg{
-		background-image: url('#{$img}/bg-recruit.png');
+		.intro--visual{
+			background-image: url('#{$img}/bg-recruit.png');
+		}
+
 	}
 	
 	&--gall{

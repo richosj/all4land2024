@@ -6,7 +6,9 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
 @each $section in $sections {
     .#{$section} {
         .intro--banner_bg {
-            background-image: url('#{$img}/bg-#{$section}.png');
+            .intro--visual{
+                background-image: url('#{$img}/bg-#{$section}.png');
+            }
         }
     }
 }

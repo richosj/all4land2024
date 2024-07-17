@@ -24,7 +24,7 @@
             <div class="ci__wrap">
                 <div class="container">
                 
-                    <dl class="ci__item">
+                    <dl class="ci__item effect-txt">
                         <dt>
                             Signature
                         </dt>
@@ -38,11 +38,11 @@
                             <a href="" class="Signature_down">다운로드</a>
                         </dd>
                     </dl>
-                    <div class="box signature">
+                    <div class="box signature effect-txt">
                         <img src="./assets/images/company/ci-ko.png" alt="올포랜드 국문 CI">
                         <img src="./assets/images/company/ci-en.png" alt="올포랜드 영문 CI">
                     </div>
-                    <dl class="ci__item">
+                    <dl class="ci__item effect-txt">
                         <dt>
                             Symbol
                         </dt>
@@ -55,10 +55,10 @@
                             </p>
                         </dd>
                     </dl>
-                    <div class="box symbol">
+                    <div class="box symbol effect-txt">
                         <img src="./assets/images/company/ci-symbol.png" alt="올포랜드 심볼">
                     </div>
-                    <dl class="ci__item">
+                    <dl class="ci__item effect-txt">
                         <dt>
                             Colors
                         </dt>
@@ -72,7 +72,7 @@
                             </div>
                         </dd>
                     </dl>
-                    <div class="ci__item--colors">
+                    <div class="ci__item--colors effect-txt">
                         <dl class="ci__item--colors--blue">
                             <dt>ALL4LAND Blue</dt>
                             <dd>
@@ -97,6 +97,25 @@
     </div>
 
     @@include('./include/footer.html')
-
+    <script>
+        const targetClassName = 'effect-txt';
+        const toggleClassName = 'active';
+        // IntersectionObserver 콜백 함수
+        const callback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(toggleClassName);
+                } else {
+                    //entry.target.classList.remove(toggleClassName);
+                }
+            });
+        };
+        const observer = new IntersectionObserver(callback, {
+            threshold: 0.5
+        });
+        document.querySelectorAll(`.${targetClassName}`).forEach(element => {
+            observer.observe(element);
+        })
+    </script>
 
 </body></html>

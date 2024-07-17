@@ -394,24 +394,24 @@ $img: '../images/recruit';
 }
 
 .recruit-step{
-	display: flex;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	aspect-ratio: 5.5/1;
 	gap: 10rem;
-	margin-top: 5rem;
+	margin: 5rem auto 0;
+	max-width: 1100px;
 	@include responsive(lg){
 		margin-top: 4rem;
-		gap: 7.5rem;
+		gap: 5rem;
 	}
 	@include responsive(md){
-		gap: 0.5rem;
+		gap: 1rem;
 		justify-content: space-between;
 		margin-top: 2.5rem;
 	}
 	li{
 		border: 1px solid #c2c2c2;
 		position: relative;
-		width: 20rem;
-		height: 20rem;
 		text-align: center;
 		border-radius: 50%;
 		font-size: 2.1rem;
@@ -419,23 +419,26 @@ $img: '../images/recruit';
 		background: #fff;
 		@include responsive(lg){
 			font-size: 1.6rem;
-			width: 24%;
-			height: 16rem;
 		}
 		@include responsive(md){
 			font-size: 1.2rem;
-			height: 10rem;
+		}
+		@include responsive(sm){
+			font-size: 1.2rem;
 		}
 		&:before{
 			position: absolute;
-			right: -35%;
+			right: -6rem;
 			top: 50%;
-			transform: translate(-35%, -50%);
+			transform: translateY(-50%);
 			display: block;
 			content:'';
 			width: 1.8rem;
 			height: 3.4rem;
 			background-image: url('#{$img}/step-arrow.png');
+			@include responsive(lg){
+				right: -3.5rem;
+			}
 			@include responsive(md){
 				display: none;
 			}
@@ -804,7 +807,6 @@ $img: '../images/recruit';
 					font-size: 1.3rem;
 					padding: 1.5rem;
 					width: 49%;
-					
 				}
 				.small{
 					margin-top: 0.5rem;
@@ -850,6 +852,9 @@ $img: '../images/recruit';
 			color:#fff;
 			padding-top: 8rem;
 			height: auto;
+			@include responsive(md){
+				padding-top: 4rem;
+			}
 			dl{
 				dd{
 					&::before{

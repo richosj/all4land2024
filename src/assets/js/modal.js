@@ -38,6 +38,7 @@ buttons.forEach(button => {
 
             if(targetVideo){
                 const existingVideo = document.getElementById('dynamicVideo');
+                const sourceSrc = button.getAttribute('data-source');
                 if (existingVideo) {
                     existingVideo.parentNode.removeChild(existingVideo);
                 }
@@ -47,7 +48,7 @@ buttons.forEach(button => {
                 video.controls = true; // 컨트롤러를 추가합니다.
     
                 const source = document.createElement('source');
-                source.src = '/assets/Inpainting.mp4'; // 여기에 비디오 파일의 경로를 넣습니다.
+                source.src = sourceSrc; // 여기에 비디오 파일의 경로를 넣습니다.
                 source.type = 'video/mp4'; // 비디오 파일의 타입
     
                 // 비디오 태그에 소스 추가
@@ -72,3 +73,10 @@ buttons.forEach(button => {
         }
     });
 });
+
+window.addEventListener('resize', () =>{
+    //console.log('Modal');
+    if(window.innerWidth < 1240){
+        document.querySelector('.alliance').classList.remove('active');
+    }
+})

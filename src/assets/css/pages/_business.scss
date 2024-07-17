@@ -31,6 +31,18 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
         background-position: calc(100% + 5.5rem) calc(100% + 5.5rem);
         background-image: url("../images/business/logo.png");
         background-repeat: no-repeat;
+        &.width-auto{
+            width: auto;
+        }
+        &._video{
+            width: 85rem;
+            header{
+                padding: 0;
+                border-bottom: 0;
+                position: relative;
+                z-index: 2;
+            }
+        }
         header{
             border-bottom: 1px solid #f0f0f0;
             position: relative;
@@ -137,11 +149,19 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
                 flex-wrap: wrap;
                 gap: 0 4rem;
                 @include responsive(lg){
-                    display: grid;
-                    grid-template-columns: repeat(1, 1fr);
+                    // display: grid;
+                    // grid-template-columns: repeat(1, 1fr);
                     gap: 1.5rem 0
                 }
             }
+
+            // .list__circle{
+            //     display: grid;
+            //     grid-template-columns: repeat(2, 1fr);
+            //     gap: 1.5rem 0;
+            //     li+li{margin-top: 0;}
+            // }
+
             @include responsive(lg){
                 padding-top: 2.5rem;
                 font-size: 1.7rem;
@@ -149,6 +169,10 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
             @include responsive(md){
                 padding-top: 2rem;
                 font-size: clamp(1.2rem,2.08vw,1.5rem);
+                // .list__circle{
+                //     grid-template-columns: repeat(2, 1fr);
+                //     gap: 1rem
+                // }
             }
         }
         &--button{
@@ -503,6 +527,13 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
         gap:0;
         grid-column: 1 / -1;
         grid-template-columns: repeat(3, 1fr);
+        @include responsive(md){
+            grid-template-columns: repeat(1, 1fr);
+            display: block;
+            .figure__grid--item+.figure__grid--item{margin-top: 1.5rem;}
+            .caption__long{margin-top: 0;}
+        }
+        
     }
 
     .figure__long{
@@ -510,6 +541,9 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
         display: flex;
         grid-column: 1 / -1;
         gap: 0 4rem;
+        @include responsive(md){
+            display: block;
+        }
         > div{
             &:nth-child(1){
                 width: 52%;
@@ -519,11 +553,22 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
                 width: 45.5%;
                 grid-template-columns: repeat(2,1fr);
             }
+            @include responsive(md){
+                display: block;
+                &:nth-child(1){
+                    width: 100%;
+                }
+                &:nth-child(2){
+                    display: block;
+                    width: 100%;
+                    grid-template-columns: repeat(1,1fr);
+                }
+            }
         }
         .caption__long{
             grid-column: 1 / -1;
             @include responsive(md){
-                margin-top: -2rem;
+                margin-top: 0;
             }
         }
     }

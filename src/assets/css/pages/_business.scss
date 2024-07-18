@@ -11,7 +11,13 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
             }
         }
     }
+    
 }
+
+
+
+
+
 
 #videoContainer{padding-bottom: 56.25%;position: relative;
     video{
@@ -301,6 +307,17 @@ $sections: soil, ocean, adminstra, survey, digital, rnd;
             display: flex; 
             justify-content: center;
             align-items: center;
+            &._play{
+                cursor: pointer;
+                &::after{
+                    content:"";display: block;position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    background:rgba(0,0,0,0.3) url("../images/solution/play.png") no-repeat 50% 50%;
+                }
+            }
             &:has(.figure__tit){
                 border-top: 0;
                 position: relative;

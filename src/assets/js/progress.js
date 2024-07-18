@@ -1,5 +1,6 @@
 
-const isSolution = document.querySelector('.solution');
+const isSolution = document.querySelector('[data-current="business"]') ? true : false;
+
 
 if(!isSolution){
 

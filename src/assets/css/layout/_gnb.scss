@@ -67,12 +67,45 @@
             justify-content: center;
             align-items: center;
             height: 100%;
+            &:last-child{
+                .bro{
+                    position: absolute;    
+                    top: 100%;
+                    right: 0;
+                    transform: translateX(calc(100% + 2.5rem));
+                    height: 28rem;
+                    display: flex;
+                    align-items: end;
+                    padding-bottom: 2rem;
+                    a{
+                        display: block;
+                        background: url("../images/common/bro.png") no-repeat 0 0;
+                        width: 16.8rem;
+                        height: 12.2rem;
+                    }
+                }
+            }
+            @for $i from 1 to 7{
+                &:nth-child(#{$i}){
+                    &:hover,
+                    &:focus{
+                        &::after{
+                            background-image: url('../images/common/gnb#{$i}.png');
+                        }
+                    }
+                }
+            }
             &::after{
                 content:"";
                 opacity: 0;
                 visibility: hidden;
                 position: absolute;
-                background: #0a5298;
+                //background: #0a5298;
+                //background-image: transparent;
+                background-color: #0c589e;
+                background-repeat: no-repeat;
+                background-position: 0% 0;
+                background-size: cover;
                 height: 38rem;
                 top: 0rem;
                 min-width: 169px;

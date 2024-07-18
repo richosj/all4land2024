@@ -81,8 +81,6 @@ const intro = document.querySelector(".intro--banner");
 
 
 if (!intro) return;
-
-
   var introHeadAction = {
     enter: function(){
       bannerTitle.classList.add('is-break');
@@ -96,22 +94,22 @@ if (!intro) return;
     }
   };
 
-  gsap.to('.page_title', { color: '#ffffff', duration: 1,
+  gsap.to('.page_title', {
     scrollTrigger: {
         trigger: visualWrap,
-        start: 'top 50%',
+        start: 'top 30%',
         end: 'top',
-        scrub: 1,
+        scrub: 0.3,
         toggleClass: { targets: bannerTitle , className: 'is-active' }
     }
   });
 
-  gsap.to('.sub_title_desc', { color: '#ffffff', duration: 1,
+  gsap.to('.sub_title_desc', {
     scrollTrigger: {
         trigger: visualWrap,
-        start: 'top 50%',
+        start: 'top 30%',
         end: 'top',
-        scrub: 1,
+        scrub: 0.3,
         toggleClass: { targets: bannerTitle, className: 'is-active' }
     }
   });
@@ -149,7 +147,7 @@ if (!intro) return;
       // Mobile
       "(max-width: 767px)": function() {
         visualElement.removeAttribute('style');
-          gsap.to(visualElement, { width: '100vw', duration: 1,
+          gsap.to(visualElement, { width: '100vw', borderRadius: '0', duration: 1,
               scrollTrigger: {
                   trigger: visualElement,
                   start: 'top 250px',
@@ -162,7 +160,7 @@ if (!intro) return;
       },
       "(max-width: 1279px)": function() {
           visualElement.removeAttribute('style');
-          gsap.to(visualElement, { width: '100vw', duration: 1,
+          gsap.to(visualElement, { width: '100vw', borderRadius: '0', duration: 1,
               scrollTrigger: {
                   trigger: visualElement,
                   start: 'top 200px',
@@ -176,7 +174,7 @@ if (!intro) return;
       // Desktop
       "(min-width: 1280px)": function() {
         visualElement.removeAttribute('style');
-          gsap.to(visualElement, { width: '100vw', duration: 1,
+          gsap.to(visualElement, { width: '100vw', borderRadius: '0', duration: 1,
               scrollTrigger: {
                   trigger: visualElement,
                   start: 'top 400px',

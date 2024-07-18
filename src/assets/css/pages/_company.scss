@@ -237,7 +237,7 @@ $sections: ceo, history, vision, client, ci, map;
                 position: absolute;
                 bottom: 0;
                 left: 50%;
-                transform: translate(-50%, 50%);
+                transform: translate(calc(-50% + .3rem), 50%);
                 width: 7rem;
                 height: 7.3rem;
                 @include set-background("#{$img}/history-head.png");
@@ -252,6 +252,7 @@ $sections: ceo, history, vision, client, ci, map;
                     background-size: cover;
                     width: 4rem;
                     height: 4rem;
+                    transform: translate(calc(-50% + .15rem), 50%);
                 }
             }
         }
@@ -858,5 +859,68 @@ $sections: ceo, history, vision, client, ci, map;
     transition: all 1.5s;
     &.active{
         opacity: 1;
+    }
+}
+
+
+/* 
+
+*/
+body:has(.vision){
+    .intro--banner{display: none;}
+}
+.vision__visual{
+    position: relative;
+    overflow: hidden;
+    //margin-bottom: 3rem;
+    &__bg{
+        background: url("../images/company/bg-vision.png") no-repeat 50% 50%;
+        height: 100vh;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        clip-path: inset(120px 120px 60px 120px round 56px);
+        z-index: -1;
+        transition: clip-path 0.8s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+        @include responsive(lg){
+                   
+        }
+    }
+    &.is-active{
+        .vision__visual__bg{
+            clip-path: inset(0 round 0px);
+        }
+    }
+}
+
+.vision__visual__content{
+    position: relative;
+}
+.vision__visual--item{
+    height: 100svh;
+    //padding-top: 55rem;
+    &:first-child{
+        padding-top: 10rem;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .txt{
+        p{
+            color: #fff;
+            text-align: center;
+            
+        }
+        .nor{
+            padding-bottom: 3.5rem;
+            font-size: 2.4rem;
+            text-align: center;
+        }
+        .bold{
+            font-weight: 700;
+            line-height: 1.34;
+            font-size: 4.8rem
+        }
     }
 }

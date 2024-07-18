@@ -67,6 +67,13 @@ body{
         @include responsive(lg){
             margin-top: 15rem;
         }
+        &.is-break,
+        &.is-active{
+            h2,
+            p{
+                color: #fff;
+            }
+        }
         h2,p{
             transition: color 0.25s;
         }
@@ -88,7 +95,7 @@ body{
                 padding-bottom: 1.5rem;
             }
             p{
-                font-size: clamp(2rem, 3.8vw, 4rem);
+                font-size: clamp(1.9rem, 3.8vw, 4rem);
             }
         }
     }

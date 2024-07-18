@@ -59,6 +59,8 @@
         }
         @include responsive(lg) {
             width: 35%;
+            padding-left: 0;
+            padding-right: 0;
         }
         .trigger{
             position: relative;
@@ -82,7 +84,14 @@
             @include responsive(lg) {
                 // padding-right: 2.5rem;
                 padding-right: 0;
+                padding-left: 1.5rem;
                 width: 100%;
+                display: block;
+                text-align: left;
+                position: relative;
+                &::after{
+                    right: 1rem;
+                }
                 span{
                     font-size: 1.4rem;
                 }

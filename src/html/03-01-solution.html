@@ -18,8 +18,31 @@
         @@include('./include/mobilenav.html')
         <!-- s: contents -->
         <div data-current="business" data-layout="sub" id="contents" class="solution">
+
+            <div class="solution__visual">
+                <div class="solution__visual__bg"></div>
+                <div class="solution__visual__content">
+                    <div class="container">
+                        <div class="solution__visual--item solution__visual--item01">
+                            <div class="txt">
+                                <p class="nor">MapPrime</p>
+                                <p class="bold">
+                                    데이터 생산부터 서비스 전 단계를 아우르는 솔루션<br>
+                                    MapPrime은 디지털트윈, AI 시대에서 최고의 선택입니다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="solution__visual--item solution__visual--item01">
+                            <div class="txt">
+                                <div><img src="./assets/images/solution/solution-visual.png" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             @@include('./include/intro.html',{
-                "sub_title_desc" : "데이터 생산부터 서비스 전 단계를 아우르는 솔루션<br>MapPrime은 디지털트윈, AI 시대에서 최고의 선택입니다."
+                "sub_title_desc" : "데이터 생산부터 서비스 전 단계를 아우르는 솔루션 <br class='md-hide'>MapPrime은 디지털트윈, <br class='md-show'>AI 시대에서 최고의 선택입니다."
             })
             
             <div class="solution__wrap">
@@ -383,4 +406,29 @@
     @@include('./include/modal.html',{
         'page__name' : 'solution'
     })
+
+    <script>
+        let solutionTimeLine = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".solution__visual",
+                pin : '.solution__visual__bg',                
+                //toggleActions : 'is-active',
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 0.3,
+                onEnter: function() {
+                    document.querySelector('.solution__visual').classList.add('is-active');
+                },
+                onLeave: function() {
+                //document.querySelector('.solution__visual').classList.remove('is-active');
+                },
+                onEnterBack: function() {
+                    document.querySelector('.solution__visual').classList.add('is-active');
+                },
+                onLeaveBack: function() {
+                document.querySelector('.solution__visual').classList.remove('is-active');
+                }
+            }
+        });
+    </script>
 </body></html>

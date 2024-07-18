@@ -51,7 +51,7 @@ $sections: esg, envir, human, health, ethics, community;
         @include responsive(md){
             padding: 4rem 0;
             p{
-                font-size: clamp(1.2rem, 2.08vw, 2rem);
+                font-size: clamp(1.3rem, 2.08vw, 2rem);
             }
         }
     }
@@ -209,6 +209,16 @@ $sections: esg, envir, human, health, ethics, community;
         padding: 13rem 0;
         background: url("../images/esg/esg-sign.png") no-repeat 50% 50%;
         background-size: cover;
+        .esg__sign--txt{
+            filter : blur(1rem);
+            transition: all 1s ease-in-out;
+        }
+        
+        &.active{
+            .esg__sign--txt{
+                filter : blur(0rem);
+            }
+        }
         &--txt{
             text-align: center;
             span{

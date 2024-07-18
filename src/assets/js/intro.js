@@ -116,7 +116,7 @@ if (!intro) return;
   gsap.to(bannerTitle, {
     scrollTrigger: {
         trigger: visualElement,
-        start: 'top 12%',
+        start: () => window.innerWidth <= 768 ? 'top 5%' : 'top 10%',
         end: 'bottom',
         onEnter: function(){
             introHeadAction.enter();

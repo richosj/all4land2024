@@ -647,6 +647,11 @@ body:has(.press){
             background: #000;
             overflow: hidden;
             border-radius: 2rem;
+            &.play{
+                &::after{
+                    opacity: 0;
+                }
+            }
             @include responsive(xl){
                 padding-bottom: 56.25%;
                 border-radius: 0;

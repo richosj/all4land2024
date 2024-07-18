@@ -111,6 +111,7 @@
             // iframe 로딩 완료 이벤트 핸들러
             iframe.onload = function() {
                 console.log('로드 완료');
+                document.querySelector('.promotion__visual--player').classList.add('play')
             };
 
             // iframe을 원하는 위치에 삽입

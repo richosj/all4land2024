@@ -23,7 +23,6 @@ $sections: esg, envir, human, health, ethics, community;
 }
 
 .esg{
-    .intro--banner_bg{background-image: url('#{$img}/bg-esg.png');}
     &__slogan{
         display: flex;
         align-items: center;

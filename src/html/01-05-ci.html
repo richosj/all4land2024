@@ -97,25 +97,5 @@
     </div>
 
     @@include('./include/footer.html')
-    <script>
-        const targetClassName = 'effect-txt';
-        const toggleClassName = 'active';
-        // IntersectionObserver 콜백 함수
-        const callback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add(toggleClassName);
-                } else {
-                    //entry.target.classList.remove(toggleClassName);
-                }
-            });
-        };
-        const observer = new IntersectionObserver(callback, {
-            threshold: 0.5
-        });
-        document.querySelectorAll(`.${targetClassName}`).forEach(element => {
-            observer.observe(element);
-        })
-    </script>
 
 </body></html>

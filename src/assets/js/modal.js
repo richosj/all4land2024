@@ -1,6 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
     const alignces = document.querySelector('.special-links a');
     const aligncesClose = document.querySelector('.alliance--close');
+
+	function Effect() {
+		const EffectClassName = 'effect-txt';
+		const activeClassName = 'active';
+		// IntersectionObserver 콜백 함수
+		const callback = (entries, observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add(activeClassName);
+				} else {
+					//entry.target.classList.remove(toggleClassName);
+				}
+			});
+		};
+		const observer = new IntersectionObserver(callback, {
+			threshold: 0.5
+		});
+		const obs = document.querySelectorAll(`.${EffectClassName}`)
+		if(!obs){
+
+		}else{
+			obs.forEach(element => {
+				observer.observe(element);
+			})
+		}
+		
+	}
+	
+	Effect()
   
     alignces.addEventListener('click', () => {
       const allianceModal = document.querySelector('.alliance');

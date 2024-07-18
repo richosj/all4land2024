@@ -23,8 +23,8 @@
             })
             <div class="vision__wrap">
                 <div class="container">
-                    <div class="vision__item--wrap">
-                        <div class="vision__item--info">
+                    <div class="vision__item--wrap effect-txt">
+                        <div class="vision__item--info ">
                             <div class="eng">
                                 Utopia
                             </div>
@@ -39,7 +39,7 @@
                             <img src="./assets/images/company/vision01.png" alt="행복한 사회 아이들 웃고 있는 이미지">
                         </div>
                     </div>
-                    <div class="vision__item--wrap">
+                    <div class="vision__item--wrap effect-txt">
                         <div class="banners">
                             <img src="./assets/images/company/vision02.png" alt="상호 존중과 신뢰 악수 하고 있는 이미지">
                         </div>
@@ -55,7 +55,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="vision__item--wrap">
+                    <div class="vision__item--wrap effect-txt">
                         <div class="vision__item--info">
                             <div class="eng">
                                 Collaboration
@@ -71,7 +71,7 @@
                             <img src="./assets/images/company/vision03.png" alt="함께하는 도전 손을 모으고 있는 사람들 이미지">
                         </div>
                     </div>
-                    <div class="vision__item--wrap">
+                    <div class="vision__item--wrap effect-txt">
                         <div class="banners">
                             <img src="./assets/images/company/vision04.png" alt="열정과 프로의식 양복을 입고 단추를 정리하는 사람 이미지">
                         </div>
@@ -94,23 +94,6 @@
     </div>
     @@include('./include/footer.html')
     <script>
-        const targetClassName = 'banners';
-        const toggleClassName = 'active';
-        // IntersectionObserver 콜백 함수
-        const callback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add(toggleClassName);
-                } else {
-                    //entry.target.classList.remove(toggleClassName);
-                }
-            });
-        };
-        const observer = new IntersectionObserver(callback, {
-            threshold: 0.5
-        });
-        document.querySelectorAll(`.${targetClassName}`).forEach(element => {
-            observer.observe(element);
-        })
+        
     </script>
 </body></html>

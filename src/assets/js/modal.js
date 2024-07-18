@@ -2,34 +2,44 @@ document.addEventListener('DOMContentLoaded', function() {
     const alignces = document.querySelector('.special-links a');
     const aligncesClose = document.querySelector('.alliance--close');
 
-	function Effect() {
-		const EffectClassName = 'effect-txt';
-		const activeClassName = 'active';
-		// IntersectionObserver 콜백 함수
-		const callback = (entries, observer) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add(activeClassName);
-				} else {
-					//entry.target.classList.remove(toggleClassName);
-				}
-			});
-		};
-		const observer = new IntersectionObserver(callback, {
-			threshold: 0.5
-		});
-		const obs = document.querySelectorAll(`.${EffectClassName}`)
-		if(!obs){
+    function Effect() {
+	const EffectClassName1 = 'effect-txt';
+	const EffectClassName2 = 'effect-txt02';
+	const activeClassName = 'active';
 
-		}else{
-			obs.forEach(element => {
-				observer.observe(element);
-			})
-		}
-		
+	// IntersectionObserver callback function
+	const callback = (entries, observer) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add(activeClassName);
+			} else {
+				//entry.target.classList.remove(activeClassName);
+			}
+		});
+	};
+
+	// Create IntersectionObserver instances
+	const observer1 = new IntersectionObserver(callback, { threshold: 0.5 });
+	const observer2 = new IntersectionObserver(callback, { threshold: 0.2 });
+
+	// Observe elements with EffectClassName1
+	const elements1 = document.querySelectorAll(`.${EffectClassName1}`);
+	if (elements1) {
+		elements1.forEach(element => {
+			observer1.observe(element);
+		});
 	}
-	
-	Effect()
+
+	// Observe elements with EffectClassName2
+	const elements2 = document.querySelectorAll(`.${EffectClassName2}`);
+	if (elements2) {
+		elements2.forEach(element => {
+			observer2.observe(element);
+		});
+	}
+}
+
+Effect();
   
     alignces.addEventListener('click', () => {
       const allianceModal = document.querySelector('.alliance');

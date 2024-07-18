@@ -17,11 +17,11 @@ $img: '../images/recruit';
 		grid-template-columns: repeat(4,1fr);
 		@include responsive(lg){
 			gap: 2rem;
-			grid-template-columns: repeat(3,1fr);
+			grid-template-columns: repeat(2,1fr);
 		}
 		@include responsive(md){
 			gap: 1rem;
-			grid-template-columns: repeat(2,1fr);
+			grid-template-columns: repeat(1,1fr);
 		}
 		&__inner{
 			position: relative;

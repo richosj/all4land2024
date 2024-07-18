@@ -32,6 +32,9 @@ $sections: solution;
         @include responsive(lg){
             clip-path: inset(6rem 4rem 6rem 4rem round 56px);
         }
+        @include responsive(md){
+            clip-path: inset(4rem 1.5rem 4rem 1.5rem round 56px);
+        }
     }
     &.is-active{
         .solution__visual__bg{
